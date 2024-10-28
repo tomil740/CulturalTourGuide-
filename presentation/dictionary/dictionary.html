@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/culToural_favicon_16x16.png " />
     <link rel="styleSheet" type="text/css" href="../styles/main.css" />
-    <title>culToural</title>
+
+    <title>dictionary</title>
   </head>
   <body>
     <header>
@@ -22,10 +22,15 @@
         </ul>
       </nav>
     </header>
-    <main class="main-container">
-      <article id="listDestinationsMenu"></article>
-    </main>
 
-    <script type="module" src="./Entry.js"></script>
+    <section id="dictionary">
+      <h1>Hebrew-Arabic Travel & Culture Dictionary</h1>
+      <div class="dictionary-container">
+        <p id="randomWord">Click the button to get a random word!</p>
+        <button onclick="showRandomWord()">Show Random Word</button>
+      </div>
+    </section>
+
+    <script type="module" src="./dictionary.js"></script>
   </body>
 </html>
