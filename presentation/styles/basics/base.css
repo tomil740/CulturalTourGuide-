@@ -6,7 +6,7 @@
 
 html {
   all: unset;
-  /* font-family: minecraft-regular, sans-serif; */
+  font-family: lato, sans-serif;
 }
 h3,
 p,
