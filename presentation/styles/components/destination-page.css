@@ -87,3 +87,8 @@ div#photo5 {
   background-color: var(--destination-grid-img-bgc);
   border-radius: var(--destination-grid-img-border-radius);
 }
+
+div.gallery-item:hover {
+  transform: scale(1.5);
+  transition: 1s;
+}
