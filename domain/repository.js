@@ -4,19 +4,26 @@ import { serverDao } from '../data/serverDao.js';
 import CardItem from './models/CardItem.js';
 import MatchingCards from './models/MatchingCards.js'
 
-class Repository {
-  #currentDdestinationId;
+
+class Repository{
 
   constructor() {
     //this.serverDao =
   }
 
-  set currentDdestinationId(des) {
-    this.#currentDdestinationId = des;
-  }
-  get currentDdestinationId() {
-    return this.#currentDdestinationId;
-  }
+
+    saveCurrentDesId(theId){
+        localStorage.setItem("currentDesId",theId);
+    }
+
+    getCurrentDesId(){
+        const res = localStorage.getItem("currentDesId");
+        if(res == null){
+            return -1;
+        }
+        return res;
+    }
+
 
   /*
     will get the matcehd data from our server dao through the api
@@ -76,23 +83,18 @@ class Repository {
       { id: 2, name: 'tel aviv' },
       { id: 3, name: 'haifa' },
     ];
+    const currentDes = this.getCurrentDesId();
     for (let item of a) {
-      if (item.id == this.#currentDdestinationId) {
+      if (item.id == currentDes) {
         return item;
       }
     }
   }
 
-  /*
-    arguments : gameId 
-    return value : matcehd question collection
-    */
-
-    getDestinationGameById(gameId){
-
-    }
-
     getMatchingGameData(){
+      //get the current des 
+      const currentDes = this.getCurrentDesId()
+      console.log("picked ", currentDes);
         //pull from the api the matched data according to our picked destination id;
         const theData = [
             {
