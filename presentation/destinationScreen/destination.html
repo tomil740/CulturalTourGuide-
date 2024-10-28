@@ -5,16 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>destination page</title>
     <link rel="stylesheet" href="../styles/basics/base.css" />
+    <link rel="stylesheet" href="../styles/basics/buttons.css" />
+    <link rel="stylesheet" href="../styles/basics/helpers.css" />
     <link rel="stylesheet" href="../styles/components/destination-page.css" />
     <script type="module" src="./destination.js" defer></script>
   </head>
 
-  <body>
-    <header class="flex">
+  <body class="flex justify-between align-center">
+    <header class="flex align-center">
       <h1>destination name</h1>
-      <button>test your knowledge!</button>
+      <button id="activateGame">test your knowledge!</button>
     </header>
 
-    <main></main>
+    <main class="flex container">
+      <section>
+        <!-- ID only -->
+        <article id="ID"></article>
+
+        <article id="cityName">
+          <h3></h3>
+          <p></p>
+        </article>
+
+        <!-- coordinates only -->
+        <article id="coordinates"></article>
+
+        <article id="description">
+          <h3>About the City</h3>
+          <p></p>
+        </article>
+
+        <article id="religiousSites">
+          <h3>Religious Sites</h3>
+          <p></p>
+        </article>
+
+        <article id="culturalAttractions">
+          <h3>Cultural Attractions</h3>
+          <p></p>
+        </article>
+
+        <article id="gridContainer">
+          <h3>City View</h3>
+          <!-- grid will display image limks from json data -->
+          <div id="imageGallery"></div>
+        </article>
+      </section>
+    </main>
   </body>
 </html>

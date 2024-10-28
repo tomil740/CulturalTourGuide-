@@ -1,3 +1,16 @@
-body {
+body.flex {
   background-image: none;
+  flex-direction: column;
+}
+
+header.flex {
+  flex-direction: column;
+}
+
+button.activateGame {
+  width: 40%;
+}
+
+section.container {
+  flex-direction: column;
 }
