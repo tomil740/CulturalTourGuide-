@@ -6,8 +6,6 @@ import MatchingCards from './models/MatchingCards.js'
 
 
 class Repository{
-class Repository {
-  #currentDdestinationId;
 
   constructor() {
     //this.serverDao =
@@ -85,23 +83,18 @@ class Repository {
       { id: 2, name: 'tel aviv' },
       { id: 3, name: 'haifa' },
     ];
+    const currentDes = this.getCurrentDesId();
     for (let item of a) {
-      if (item.id == this.#currentDdestinationId) {
+      if (item.id == currentDes) {
         return item;
       }
     }
   }
 
-  /*
-    arguments : gameId 
-    return value : matcehd question collection
-    */
-
-    getDestinationGameById(gameId){
-        
-    }
-
     getMatchingGameData(){
+      //get the current des 
+      const currentDes = this.getCurrentDesId()
+      console.log("picked ", currentDes);
         //pull from the api the matched data according to our picked destination id;
         const theData = [
             {

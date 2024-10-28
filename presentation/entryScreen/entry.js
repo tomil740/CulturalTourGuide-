@@ -4,11 +4,12 @@ import repository from "../../domain/repository.js";
 class Entry{
     constructor(){
         const a = repository.getAllDestinationPrev();
-        entryDrawData.drawListMenu(a);
+        entryDrawData.drawListMenu(a,this.onDdestinationPick);
     }
 
-    onDdestinationPick(desId){
+    onDdestinationPick(desId){ 
         repository.saveCurrentDesId(desId);
+        window.location.href = '../game/game.html';
     }
 }
 const entry = new Entry();
