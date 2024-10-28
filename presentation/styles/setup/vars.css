@@ -1,9 +1,10 @@
 /* Color Variables */
-:roo {
-  --color-primary: rgb(0 68 127);
+:root {
+  --color-primary: #00447f;
   --color-surface-tint: rgb(20 95 170);
   --color-on-primary: rgb(255 255 255);
   --color-primary-container: rgb(35 104 179);
+  --color-primary-container-trans: rgba(35, 105, 179, 0.892);
   --color-on-primary-container: rgb(255 255 255);
   --color-secondary: rgb(75 95 126);
   --color-on-secondary: rgb(255 255 255);
