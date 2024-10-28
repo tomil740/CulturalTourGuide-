@@ -4,13 +4,17 @@ body.flex {
 }
 
 header.flex {
+  width: 100vw;
+  height: 20vh;
   flex-direction: column;
-}
-
-button.activateGame {
-  width: 40%;
 }
 
 section.container {
   flex-direction: column;
+  background-color: var(--color-secondary);
+}
+
+article.gridContainer {
+  display: grid;
+  grid-template-areas: "photo1 photo2 photo3 photo4 photo5";
 }
