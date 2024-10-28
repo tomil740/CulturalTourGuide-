@@ -2,6 +2,8 @@
 button {
   /* inherit font family */
   font-family: inherit, sans-serif;
+  background-color: var(--color-on-primary);
   padding: 1.1%;
   border-radius: 1.2rem;
+  cursor: pointer;
 }
