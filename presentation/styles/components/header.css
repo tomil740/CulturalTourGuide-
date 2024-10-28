@@ -1,0 +1,39 @@
+header {
+  height: 80px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  background-color: var(--color-primary-container);
+  color: white;
+}
+
+header a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+#logo {
+  height: 80px;
+  margin-left: 20px;
+}
+
+.navbar {
+  list-style: none;
+  padding: 0;
+}
+
+.navbar li {
+  display: inline;
+  margin: 0 15px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding-right: 30px;
+}
