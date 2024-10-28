@@ -1,5 +1,6 @@
 //import Server dao/
 import DestinationPrev from './models/DestinationPrev.js'
+import { serverDao } from '../data/serverDao.js';
 
 class Repository{
     #currentDdestinationId;
