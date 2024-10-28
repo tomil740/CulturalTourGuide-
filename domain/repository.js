@@ -5,17 +5,21 @@ import CardItem from './models/CardItem.js';
 import MatchingCards from './models/MatchingCards.js'
 
 class Repository{
-    #currentDdestinationId;
 
     constructor(){
         //this.serverDao = 
     }
 
-    set currentDdestinationId(des){
-        this.#currentDdestinationId = des;
+    saveCurrentDesId(theId){
+        localStorage.setItem("currentDesId",theId);
     }
-    get currentDdestinationId(){
-        return this.#currentDdestinationId;
+
+    getCurrentDesId(){
+        const res = localStorage.getItem("currentDesId");
+        if(res == null){
+            return -1;
+        }
+        return res;
     }
 
     /*
@@ -55,7 +59,7 @@ class Repository{
     return value : matcehd question collection
     */
     getDestinationGameById(gameId){
-
+        
     }
 
     getMatchingGameData(){

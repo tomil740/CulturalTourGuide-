@@ -8,9 +8,11 @@ class Entry{
     }
 
     onDdestinationPick(desId){
-        repository.currentDdestination = desId;
+        repository.saveCurrentDesId(desId);
     }
 }
 const entry = new Entry();
 entry
+
+
 
