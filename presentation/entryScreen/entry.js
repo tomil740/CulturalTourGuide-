@@ -3,13 +3,14 @@ import repository from "../../domain/repository.js";
 
 class Entry{
     constructor(){
-        const a = repository.getAllDestinationPrev();
-        entryDrawData.drawListMenu(a,this.onDdestinationPick);
+        repository.getAllDestinationPrev().then((data)=>{
+            entryDrawData.drawListMenu(data,this.onDdestinationPick);
+        });
     }
 
     onDdestinationPick(desId){ 
         repository.saveCurrentDesId(desId);
-        window.location.href = '../game/game.html';
+        window.location.href = '../destinationScreen/destination.html';
     }
 }
 const entry = new Entry();
