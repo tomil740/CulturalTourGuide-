@@ -4,11 +4,24 @@ import repository from "../../domain/repository.js";
 class Destination {
   #drawObj;
   constructor() {
-    console.log("running");
 
-    // get the current destination
-    const currentDest = repository.getCurrentDestination();
-    this.#drawObj = new destinationDrawData(currentDest);
+    repository.getCurrentDestination().then(
+      (data)=>{
+        this.setdrawObj(new destinationDrawData(data,this.onStartGame)
+      )}
+    );
+  }
+
+  setdrawObj(theObj){
+    this.#drawObj = theObj; 
+  }
+  get drawObj(){
+    return this.#drawObj;
+  }
+
+  onStartGame(){
+    window.location.href = '../game/game.html';
+
   }
 }
 
