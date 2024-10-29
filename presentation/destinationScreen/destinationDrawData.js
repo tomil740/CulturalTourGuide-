@@ -1,5 +1,4 @@
 class DestinationDrawData {
-
   constructor(destinationObj) {
     this.destinationObj = destinationObj;
 
@@ -8,23 +7,29 @@ class DestinationDrawData {
     const mainContainer = document.querySelector("#destinationContent");
 
     // initial div to make sure everything is correct
-    const ele = document.createElement("div");
-    ele.innerHTML = `<h3>working with the obj ${this.destinationObj["city"]}</h3>`;
-    mainContainer.appendChild(ele);
+    // const ele = document.createElement("div");
+    // ele.innerHTML = `<h3>working with the obj ${this.destinationObj["city"]}</h3>`;
+    // mainContainer.appendChild(ele);
 
     // append the other data elements
     this.createDataEl(mainContainer);
 
     // change game activation button text
     this.gameButtonText();
+    // create page headline with city (destination) name
+    this.createHeadline();
+    // render images
+    this.renderImages(mainContainer);
   }
 
   // methods to create elements from data drawn from JSON
 
   createDataEl(mainContainer) {
-    Object.keys(this.destinationObj).forEach((key) => {
-      let val = this.destinationObj[key];
+    // data keys to render on destination page
+    const renderKeys = ["description", "restaurants", "attractions"];
 
+    renderKeys.forEach((key) => {
+      let val = this.destinationObj[key];
 
       // append value only if it's not a nested value
       if (!Array.isArray(val)) {
@@ -35,8 +40,8 @@ class DestinationDrawData {
         const hElement = document.createElement("h3");
         const dataContent = document.createElement("div");
 
-
         hElement.textContent = `${key}`;
+        hElement.style.textTransform = "capitalize";
         dataContent.textContent = `${val}`;
 
         // append h3 and content to the div
@@ -49,11 +54,33 @@ class DestinationDrawData {
     });
   }
 
-
   gameButtonText() {
     // get game activation button
     const gameBtn = document.querySelector("#activateGame");
     gameBtn.textContent = `show us what you know about ${this.destinationObj["city"]}!`;
+  }
+
+  createHeadline() {
+    const h1 = document.querySelector("h1#cityName");
+    h1.textContent = `${this.destinationObj["city"]}`;
+  }
+
+  renderImages(mainContainer) {
+    // create div element for the JSON images
+    const imageDiv = document.createElement("div");
+    imageDiv.setAttribute("id", "cityImages");
+
+    this.destinationObj["image"].forEach((url) => {
+      // create an img element for each image url
+      const imageEl = document.createElement("img");
+      imageEl.src = url;
+
+      // append imageEl to the imageDiv
+      imageDiv.appendChild(imageEl);
+    });
+
+    // append imageDiv to mainContainer
+    mainContainer.appendChild(imageDiv);
   }
 }
 
