@@ -1,3 +1,5 @@
+window.addEventListener('load', initMap);
+
 let map;
 let markers = [];
 
@@ -20,9 +22,9 @@ async function fetchPlacesAndAddMarkers() {
     }
 
     const destinations = await response.json();
+    console.log('Fetched destinations:', destinations);
 
     addMarkers(destinations);
-
     generateCards(destinations);
   } catch (error) {
     console.error('Error fetching places data:', error);
@@ -32,7 +34,6 @@ async function fetchPlacesAndAddMarkers() {
 function addMarkers(destinations) {
   destinations.forEach((destination) => {
     const { lat, lng } = destination.loc;
-
     const marker = new google.maps.Marker({
       position: { lat, lng },
       map: map,
@@ -43,25 +44,39 @@ function addMarkers(destinations) {
   });
 }
 
-function generateCards(destinations) {
-  const container = document.getElementById('listDestinationsMenu');
+// function generateCards(destinations) {
+//   const container = document.getElementById('listDestinationsMenu');
 
-  destinations.forEach((destination) => {
-    const card = document.createElement('div');
-    card.classList.add('destination-card');
-    card.innerHTML = `
-      <img src="${destination.imgUrls[0]}" alt="${destination.city}">
-      <h2>${destination.city}</h2>
-      <p>${destination.summary}</p>
-    `;
+//   destinations.forEach((destination) => {
+//     const card = document.createElement('div');
+//     card.classList.add('destination-card');
+//     card.innerHTML = `
+//       <img src="${destination.imgUrls[0]}" alt="${destination.city}">
+//       <h2>${destination.city}</h2>
+//       <p>${destination.summary}</p>
+//     `;
 
-    card.addEventListener('click', () => {
-      map.panTo({ lat: destination.loc.lat, lng: destination.loc.lng });
-      map.setZoom(12);
-    });
+//     card.addEventListener('click', () => {
+//       map.panTo({ lat: destination.loc.lat, lng: destination.loc.lng });
+//       map.setZoom(12);
+//     });
 
-    container.appendChild(card);
-  });
-}
+//     container.appendChild(card);
+//   });
+// }
 
-window.onload = initMap;
+document.getElementById('showMapBtn').addEventListener('click', () => {
+  const mapContainer = document.getElementById('map');
+  const showMapBtn = document.getElementById('showMapBtn');
+  const cardsContainer = document.getElementById('listDestinationsMenu');
+  const isMapVisible = mapContainer.style.display === 'block';
+
+  if (isMapVisible) {
+    mapContainer.style.display = 'none';
+    cardsContainer.style.display = 'flex';
+  } else {
+    showMapBtn.textContent = 'Show places';
+    mapContainer.style.display = 'block';
+    cardsContainer.style.display = 'none';
+  }
+});

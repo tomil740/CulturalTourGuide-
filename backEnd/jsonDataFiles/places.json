@@ -3,7 +3,7 @@
     "id": "123",
     "city": "Jerusalem",
     "population": 8000000,
-    "imgUrls": ["https://t4.ftcdn.net/jpg/06/01/54/75/360_F_601547536_E7ovUzbSUOCnoodB9At0wWnyzpUlgnwf.jpg"],
+    "imgUrls": ["https://plus.unsplash.com/premium_photo-1697730130972-627b46998282?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
     "summary": "test test",
     "category": ["rests", "hotels"],
     "loc": {
