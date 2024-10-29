@@ -1,6 +1,6 @@
 [
   {
-    "_id": "123",
+    "id": "123",
     "city": "Jerusalem",
     "population": 8000000,
     "imgUrls": ["https://t4.ftcdn.net/jpg/06/01/54/75/360_F_601547536_E7ovUzbSUOCnoodB9At0wWnyzpUlgnwf.jpg"],
@@ -12,7 +12,7 @@
     }
   },
   {
-    "_id": "124",
+    "id": "124",
     "city": "Tel Aviv - Jaffa",
     "population": 460000,
     "imgUrls": ["https://plus.unsplash.com/premium_photo-1697730177654-75dfc22bc231?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
@@ -21,7 +21,7 @@
     "loc": { "lat": 32.0853, "lng": 34.7818 }
   },
   {
-    "_id": "125",
+    "id": "125",
     "city": "Haifa",
     "population": 285000,
     "imgUrls": ["https://images.unsplash.com/photo-1628405633956-385f623b767d?q=80&w=2070&auto=format&fit=crop"],
@@ -30,7 +30,7 @@
     "loc": { "lat": 32.794, "lng": 34.9896 }
   },
   {
-    "_id": "126",
+    "id": "126",
     "city": "Nazareth",
     "population": 77000,
     "imgUrls": ["https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Nazareth_Panorama_Dafna_Tal_IMOT_%2814532097313%29.jpg/800px-Nazareth_Panorama_Dafna_Tal_IMOT_%2814532097313%29.jpg"],
@@ -39,7 +39,7 @@
     "loc": { "lat": 32.6996, "lng": 35.3035 }
   },
   {
-    "_id": "127",
+    "id": "127",
     "city": "Acre",
     "population": 48000,
     "imgUrls": ["https://images.unsplash.com/photo-1691071100985-72b022edee92?q=80&w=2072&auto=format&fit=crop"],
@@ -48,7 +48,7 @@
     "loc": { "lat": 32.9234, "lng": 35.0706 }
   },
   {
-    "_id": "128",
+    "id": "128",
     "city": "Ramla",
     "population": 76000,
     "imgUrls": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKU8YSR8mnDerlaidRmEafFvcqi91Fb44o39RTYLl3VO2Qr9OiCBdadkJiAp4nabUy9yI&usqp=CAU"],
@@ -57,7 +57,7 @@
     "loc": { "lat": 31.927, "lng": 34.8732 }
   },
   {
-    "_id": "129",
+    "id": "129",
     "city": "Lod",
     "population": 77000,
     "imgUrls": ["https://www.streetsigns.co.il/Images/extra/c1749.jpg"],
