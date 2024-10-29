@@ -1,5 +1,5 @@
-class Destination{
-    /*
+class Destination {
+  /*
     #id;
     #name;
     #image;
@@ -8,15 +8,14 @@ class Destination{
     #resturantce;
     #culturalDes;
     */
-    constructor(argObj){
-        this.id = argObj.id;
-        this.name = argObj.city;
-        this.image = argObj.imgUrls;
-        this.description = argObj.summary;
-        this.cityName = argObj.city;
-        this.resturantce = argObj.category[0];
-        this.culturalDes = argObj.category[1];
-    }
+  constructor(argObj) {
+    this.id = argObj.id;
+    this.city = argObj.city;
+    this.image = argObj.imgUrls;
+    this.description = argObj.summary;
+    this.restaurants = argObj.category[0];
+    this.culturalDes = argObj.category[1];
+  }
 }
 
 export default Destination;
