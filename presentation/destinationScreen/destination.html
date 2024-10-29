@@ -3,11 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/components/destination-page.css" />
-    <title>Document</title>
+    <title>destination page</title>
+    <link rel="stylesheet" href="../styles/main.css" />
+    <script type="module" src="./destination.js" defer></script>
   </head>
-  <body>
-    <script type="module" src="./destination.js"></script>
-    <h1>Hello World</h1>
+
+  <body class="flex justify-between align-center">
+    <header class="flex align-center">
+      <h1>destination name placeholder</h1>
+      <!-- <button id="activateGame">test your knowledge!</button> -->
+    </header>
+
+    <main class="flex align-center">
+      <button id="activateGame">test your knowledge!</button>
+      <section class="container flex align-center justify-between">
+        <!-- destination.js will add content from json data here -->
+        <div id="destinationContent">destination content placeholder</div>
+      </section>
+    </main>
   </body>
 </html>

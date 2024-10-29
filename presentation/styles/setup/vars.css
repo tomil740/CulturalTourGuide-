@@ -1,9 +1,10 @@
 /* Color Variables */
-:roo {
+:root {
   --color-primary: rgb(0 68 127);
   --color-surface-tint: rgb(20 95 170);
   --color-on-primary: rgb(255 255 255);
   --color-primary-container: rgb(35 104 179);
+  --color-primary-container-trans: rgba(35, 105, 179, 0.892);
   --color-on-primary-container: rgb(255 255 255);
   --color-secondary: rgb(75 95 126);
   --color-on-secondary: rgb(255 255 255);
@@ -49,4 +50,13 @@
   --color-surface-container: rgb(237 237 244);
   --color-surface-container-high: rgb(231 232 239);
   --color-surface-container-highest: rgb(225 226 233);
+
+  /* destination page photo grid */
+  --destination-grid-img-width: 8rem;
+  --destination-grid-img-height: 8rem;
+  --destination-grid-img-border-radius: 0.3rem;
+  --destination-grid-img-bgc: rgb(75 95 126);
+
+  /* destination page p element line height */
+  --destination-line-height: 1.5;
 }
