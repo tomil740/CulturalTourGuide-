@@ -18,12 +18,17 @@ class DestinationDrawData {
     this.gameButtonText();
     // create page headline with city (destination) name
     this.createHeadline();
+    // render images
+    this.renderImages(mainContainer);
   }
 
   // methods to create elements from data drawn from JSON
 
   createDataEl(mainContainer) {
-    Object.keys(this.destinationObj).forEach((key) => {
+    // data keys to render on destination page
+    const renderKeys = ["description", "restaurants", "attractions"];
+
+    renderKeys.forEach((key) => {
       let val = this.destinationObj[key];
 
       // append value only if it's not a nested value
@@ -36,6 +41,7 @@ class DestinationDrawData {
         const dataContent = document.createElement("div");
 
         hElement.textContent = `${key}`;
+        hElement.style.textTransform = "capitalize";
         dataContent.textContent = `${val}`;
 
         // append h3 and content to the div
@@ -57,6 +63,24 @@ class DestinationDrawData {
   createHeadline() {
     const h1 = document.querySelector("h1#cityName");
     h1.textContent = `${this.destinationObj["city"]}`;
+  }
+
+  renderImages(mainContainer) {
+    // create div element for the JSON images
+    const imageDiv = document.createElement("div");
+    imageDiv.setAttribute("id", "cityImages");
+
+    this.destinationObj["image"].forEach((url) => {
+      // create an img element for each image url
+      const imageEl = document.createElement("img");
+      imageEl.src = url;
+
+      // append imageEl to the imageDiv
+      imageDiv.appendChild(imageEl);
+    });
+
+    // append imageDiv to mainContainer
+    mainContainer.appendChild(imageDiv);
   }
 }
 
