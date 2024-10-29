@@ -23,4 +23,4 @@ const mockDestination = {
 };
 
 const destination = new Destination();
-// destination;
+destination;
