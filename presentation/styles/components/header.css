@@ -1,4 +1,6 @@
 header {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
   height: 80px;
   display: flex;
   justify-content: start;
@@ -36,4 +38,5 @@ header a {
   text-decoration: none;
   font-size: 18px;
   padding-right: 30px;
+
 }
