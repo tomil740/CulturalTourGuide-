@@ -22,5 +22,5 @@ const mockDestination = {
   loc: { lat: 40.7128, lng: -74.006 },
 };
 
-const destination = new Destination(mockDestination);
-destination;
+const destination = new Destination();
+// destination;

@@ -47,7 +47,7 @@ class DestinationDrawData {
   gameButtonText() {
     // get game activation button
     const gameBtn = document.querySelector("#activateGame");
-    gameBtn.textContent = `show us what you know about ${this.destinationObj[city]}!`;
+    gameBtn.textContent = `show us what you know about ${this.destinationObj["city"]}!`;
   }
 }
 
