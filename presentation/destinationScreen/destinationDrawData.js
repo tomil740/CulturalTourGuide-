@@ -5,6 +5,12 @@ class DestinationDrawData {
     ele.innerHTML = `<h3>working with the obj ${destinationObj}</h3>`;
     mainContainer.appendChild(ele);
   }
+  // methods to create elements from data drawn from JSON
+  createCityNameEl() {}
+  createDescriptionEl() {}
+  createCulturalSitesEl() {}
+  createReligiousSitesEl() {}
+  createImageGalleryEl() {}
 }
 
 export default DestinationDrawData;
