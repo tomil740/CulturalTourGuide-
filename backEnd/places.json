@@ -7,15 +7,15 @@
     "summary": "test test",
     "category": ["rests", "hotels"],
     "loc": {
-      "lat": -156.6917,
-      "lan": 20.93792
+      "lat": 31.7683,
+      "lng": 35.2137
     }
   },
   {
     "_id": "124",
     "city": "Tel Aviv - Jaffa",
     "population": 460000,
-    "imgUrls": ["https://plus.unsplash.com/premium_photo-1697730177654-75dfc22bc231?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
+    "imgUrls": ["https://plus.unsplash.com/premium_photo-1697730177654-75dfc22bc231?q=80&w=2070&auto=format&fit=crop"],
     "summary": "A vibrant modern city on Israel's Mediterranean coast.",
     "category": ["beaches", "nightlife"],
     "loc": { "lat": 32.0853, "lng": 34.7818 }
