@@ -31,7 +31,7 @@ async function fetchPlacesAndAddMarkers() {
 }
 
 function addMarkers(destinations) {
-  destinations.forEach((destination) => {
+  destinations.forEach((destination, index) => {
     const { lat, lng } = destination.loc;
     const marker = new google.maps.Marker({
       position: { lat, lng },
@@ -39,15 +39,40 @@ function addMarkers(destinations) {
       title: destination.city,
     });
 
+    const infoWindow = new google.maps.InfoWindow({
+      content: createInfoWindowContent(destination, index),
+    });
+
+    marker.addListener('click', () => {
+      infoWindow.open(map, marker);
+    });
+
     markers.push(marker);
   });
+}
+
+function createInfoWindowContent(destination, index) {
+  const content = document.createElement('div');
+  content.classList.add('info-window-content');
+  content.innerHTML = `
+    <img src="${destination.imgUrls[0]}" alt="${destination.city}" >
+    <h3>${destination.city}</h3>
+    <p>${destination.summary}</p>
+    <button id="viewDetails-${index}">View Details</button>
+  `;
+
+  content.querySelector(`#viewDetails-${index}`).addEventListener('click', () => {
+    window.location.href = `../destinationScreen/destination.html?id=${index}`;
+  });
+
+  return content;
 }
 
 function generateCards(destinations) {
   const container = document.getElementById('listDestinationsMenu');
   container.innerHTML = '';
 
-  destinations.forEach((destination) => {
+  destinations.forEach((destination, index) => {
     const card = document.createElement('div');
     card.classList.add('destination-card');
     card.innerHTML = `
@@ -57,12 +82,18 @@ function generateCards(destinations) {
     `;
 
     card.addEventListener('click', () => {
-      map.panTo({ lat: destination.loc.lat, lng: destination.loc.lng });
-      map.setZoom(12);
+      handleCardClick(destination);
     });
 
     container.appendChild(card);
   });
+}
+
+function handleCardClick(destination) {
+  map.panTo({ lat: destination.loc.lat, lng: destination.loc.lng });
+  map.setZoom(12);
+
+  window.location.href = `../destinationScreen/destination.html`;
 }
 
 document.getElementById('showMapBtn').addEventListener('click', () => {
