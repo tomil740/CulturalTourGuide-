@@ -1,6 +1,6 @@
 #map {
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   margin-top: 20px;
   display: none;
   position: relative;
@@ -9,26 +9,4 @@
 #map,
 #listDestinationsMenu {
   transition: all 0.3s ease-in-out;
-}
-
-.showMapBtn {
-  position: absolute;
-  margin-top: 20px;
-  margin-left: 20px;
-  border-radius: 10px;
-  background-color: var(--color-inverse-surface);
-  padding: 10px;
-  border: none;
-  cursor: pointer;
-  z-index: 1000;
-  bottom: 100px;
-  color: white;
-  bottom: 100px;
-  right: 50%;
-}
-
-.showMapBtn:hover {
-  background-color: var(--color-error-container);
-  color: var(--color-primary);
-  font-weight: 600;
 }
