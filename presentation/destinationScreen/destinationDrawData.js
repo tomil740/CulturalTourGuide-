@@ -1,8 +1,11 @@
 class DestinationDrawData {
 
-  constructor(destinationObj) {
+  constructor(destinationObj,gameCallBackFun) {
     this.destinationObj = destinationObj;
 
+    //set the navigation to the matched game...
+    document.querySelector('main button#activateGame').addEventListener("click",gameCallBackFun);
+ 
     // get main element as destination container
 
     const mainContainer = document.querySelector("#destinationContent");

@@ -4,7 +4,7 @@ The server/remote api will supply all our backEnd funconalty by:
 
 In practice:
     * our server will comunicate with our database and supply all the needed data and backend functonalty to the app.
-*/
+*/ 
 const express = require('express');
 const fns = require('./serviceUtil.js');
 const cors = require('cors');

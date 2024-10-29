@@ -1,13 +1,73 @@
-body main article#gameSection{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(14vw,20%));
-    gap: 3vw;
-    margin: 5%;
+body main section#gameContainer{
+    display: flex;
+    margin: 3%;
+    align-items:first center;
+}
+
+body main section#gameContainer section.endGameDialog{
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50vw;
+    height: 50vh;
+    background-color: var(--color-on-secondary-container);
+    color: var(--color-secondary);
+    padding: 15%;
+    display: flex;
+    column-gap: 25%;
+    z-index: -1;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
     justify-content: center;
 }
 
-body main article#gameSection div.cardItem{
-    height: 25vh;
+body main section#gameContainer section.endGameDialog button{
+    width: 75%;
+    height: 25%;
+    font-size:x-large;
+    padding: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body main section#gameContainer section.endGameDialog.expose{
+    z-index: 100;
+}
+
+body main section#gameContainer div.progBarContainer{
+    background-color: var(--color-secondary-container);
+    width: 23vw;
+    height: 55vh;
+    border-radius: 15px;
+    position: relative;
+}
+
+body main section#gameContainer div.progBarContainer div.progBar{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    color: var(--color-secondary-container);
+    height: 25%;
+    width: 100%;
+    border-radius: 15px;
+    background-color: var(--color-on-secondary-container);    
+}
+
+
+body main section article#gameSection{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+    grid-template-rows: repeat(auto-fit, minmax(55px,1fr));
+    gap: 3vw;
+    margin: 5%;
+    justify-content: center;
+    max-height: 75vh;
+}
+
+body main section article#gameSection div.cardItem{
     background-color: var(--color-secondary);
     color: var(--color-on-secondary);
     display: flex;
@@ -17,42 +77,83 @@ body main article#gameSection div.cardItem{
     padding: 4% 0;
     position: relative;
 }
-body main article#gameSection div.cardItem div{
+body main section article#gameSection div.cardItem div{
     position: absolute;
     width: 100%;
     height: 100%;
     z-index: 1;
 }
-body main article#gameSection div.cardItem div.expose{
+body main section article#gameSection div.cardItem div.expose{
     z-index: -1;
 }
 
-body main article#gameSection div.cardItem div.card-typeA{
+body main section article#gameSection div.cardItem div.card-typeA{
     background-color: var(--color-secondary);
 }
 
-body main article#gameSection div.cardItem div.card-typeB{
+body main section article#gameSection div.cardItem div.card-typeB{
     background-color: var(--color-tertiary);
 
 }
 
 
-body main article#gameSection div.cardItem{
+body main section article#gameSection div.cardItem{
     background-color: rgb(93, 86, 86);
 }
 
-body main article#gameSection div.cardItem.card-typeB{
+body main section article#gameSection div.cardItem.card-typeB{
     background-color: rgb(172, 118, 118);
 }
 
-body main article#gameSection div.cardItem h3{
+body main section article#gameSection div.cardItem h3{
     color: red;
     z-index: 3;
 }
 
-body main article#gameSection div.cardItem img{
+body main section article#gameSection div.cardItem img{
     padding: 5%;
     max-width: 90%;
     max-height: 90%;
     border-radius: 12px;
+}
+
+body main section#gameContainer div.progBar.extraProgClass10::after{
+    height: 10%;
+    content: "10%";
+}
+body main section#gameContainer div.progBar.extraProgClass10::after{
+    height: 20%;
+    content: "20%";
+}
+body main section#gameContainer div.progBar.extraProgClass10::after{
+    height: 30%;
+    content: "30%";
+}
+body main section#gameContainer div.progBar.extraProgClass10::after{
+    height: 40%;
+    content: "40%";
+}
+body main section#gameContainer div.progBar.extraProgClass10::after{
+    height: 50%;
+    content: "50%";
+}
+body main section#gameContainer div.progBar.extraProgClass10::after{
+    height: 60%;
+    content: "60%";
+}
+body main section#gameContainer div.progBar.extraProgClass10::after{
+    height: 70%;
+    content: "70%";
+}
+body main section#gameContainer div.progBar.extraProgClass10::after{
+    height: 80%;
+    content: "80%";
+}
+body main section#gameContainer div.progBar.extraProgClass10::after{
+    height: 90%;
+    content: "90%";
+}
+body main section#gameContainer div.progBar.extraProgClass10::after{
+    height: 100%;
+    content: "100%";
 }

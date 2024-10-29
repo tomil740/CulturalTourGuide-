@@ -34,6 +34,9 @@ class MatchingGame{
         const matchedGameRef = games.matchingGameRef;
         /*
             for our Html we use the full typed id,for this function we will cut the type...
+            that is useful to:
+            * find when the user click on the same card by "&& (theCardId!=matchedGameRef.openCardId)"
+            * and from the other hand find matches with the other option
         */
        //cardId  => argCardId
         const argCardId = theCardId.slice(0,theCardId.length-1);
@@ -42,8 +45,9 @@ class MatchingGame{
 
         if(matchedGameRef.openCardId != -1){
             const prevCardId =  matchedGameRef.openCardId.slice(0, matchedGameRef.openCardId.length-1); 
-            if(prevCardId == argCardId){
+            if(prevCardId == argCardId && (theCardId!=matchedGameRef.openCardId)){
                 matchedGameRef.openPairs++;
+                drawMatchingGame.onPair(theCardId,matchedGameRef.openCardId);
                 matchedGameRef.openCardId = -1;
                 matchedGameRef.isCompleted();
             }else{
@@ -58,10 +62,15 @@ class MatchingGame{
 
     isCompleted(){
         const matchedGameRef = games.matchingGameRef;
-
+        const progress = (matchedGameRef.openPairs/matchedGameRef.sumOfPile);
+         //to precentages
         if(matchedGameRef.openPairs == matchedGameRef.sumOfPile){
-            console.log("matched");
+            drawMatchingGame.updateProgBar(100);
+            drawMatchingGame.onGameEndDialog();
             ////finesh...
+        }else{
+            drawMatchingGame.updateProgBar(progress*100);
+            drawMatchingGame.onGameEndDialog();
         }
     }
 }
