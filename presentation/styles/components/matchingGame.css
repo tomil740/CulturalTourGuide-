@@ -1,0 +1,58 @@
+body main article#gameSection{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14vw,20%));
+    gap: 3vw;
+    margin: 5%;
+    justify-content: center;
+}
+
+body main article#gameSection div.cardItem{
+    height: 25vh;
+    background-color: var(--color-secondary);
+    color: var(--color-on-secondary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4% 0;
+    position: relative;
+}
+body main article#gameSection div.cardItem div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+body main article#gameSection div.cardItem div.expose{
+    z-index: -1;
+}
+
+body main article#gameSection div.cardItem div.card-typeA{
+    background-color: var(--color-secondary);
+}
+
+body main article#gameSection div.cardItem div.card-typeB{
+    background-color: var(--color-tertiary);
+
+}
+
+
+body main article#gameSection div.cardItem{
+    background-color: rgb(93, 86, 86);
+}
+
+body main article#gameSection div.cardItem.card-typeB{
+    background-color: rgb(172, 118, 118);
+}
+
+body main article#gameSection div.cardItem h3{
+    color: red;
+    z-index: 3;
+}
+
+body main article#gameSection div.cardItem img{
+    padding: 5%;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+}
