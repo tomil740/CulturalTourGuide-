@@ -1,27 +1,27 @@
 class DestinationDrawData {
   constructor(destinationObj) {
-    const mockObject = `{
-      "_id": "123",
-      "city": "Jerusalem",
-      "population": 8000000,
-      "imgUrls": ["https://t4.ftcdn.net/jpg/06/01/54/75/360_F_601547536_E7ovUzbSUOCnoodB9At0wWnyzpUlgnwf.jpg"],
-      "summary": "test test",
-      "category": ["rests", "hotels"],
-      "loc": {
-        "lat": -156.6917,
-        "lan": 20.93792
-      }`;
+    this.destinationObj = destinationObj;
 
+    // get main element as destination container
     const mainContainer = document.querySelector("#destinationContent");
+
+    // initial div to make sure everything is correct
     const ele = document.createElement("div");
-    ele.innerHTML = `<h3>working with the obj ${destinationObj}</h3>`;
+    ele.innerHTML = `<h3>working with the obj ${destinationObj["city"]}</h3>`;
     mainContainer.appendChild(ele);
+
+    // append the other data elements
+    this.createDataEl(mainContainer);
+
+    // change game activation button text
+    this.gameButtonText();
   }
 
   // methods to create elements from data drawn from JSON
-  createDataEl() {
-    Object.keys(destinationObj).forEach((key) => {
-      let val = destinationObj.key;
+  createDataEl(mainContainer) {
+    Object.keys(this.destinationObj).forEach((key) => {
+      let val = destinationObj[key];
+
       // append value only if it's not a nested value
       if (!Array.isArray(val)) {
         const dataElementDiv = document.createElement("div");
@@ -42,6 +42,12 @@ class DestinationDrawData {
         mainContainer.appendChild(dataElementDiv);
       }
     });
+  }
+
+  gameButtonText() {
+    // get game activation button
+    const gameBtn = document.querySelector("#activateGame");
+    gameBtn.textContent = `show us what you know about ${destinationObj[city]}!`;
   }
 }
 
