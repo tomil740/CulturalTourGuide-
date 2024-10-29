@@ -1,8 +1,10 @@
 class DestinationDrawData {
+
   constructor(destinationObj) {
     this.destinationObj = destinationObj;
 
     // get main element as destination container
+
     const mainContainer = document.querySelector("#destinationContent");
 
     // initial div to make sure everything is correct
@@ -18,9 +20,11 @@ class DestinationDrawData {
   }
 
   // methods to create elements from data drawn from JSON
+
   createDataEl(mainContainer) {
     Object.keys(this.destinationObj).forEach((key) => {
       let val = this.destinationObj[key];
+
 
       // append value only if it's not a nested value
       if (!Array.isArray(val)) {
@@ -30,6 +34,7 @@ class DestinationDrawData {
 
         const hElement = document.createElement("h3");
         const dataContent = document.createElement("div");
+
 
         hElement.textContent = `${key}`;
         dataContent.textContent = `${val}`;
@@ -43,6 +48,7 @@ class DestinationDrawData {
       }
     });
   }
+
 
   gameButtonText() {
     // get game activation button
