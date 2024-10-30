@@ -1,19 +1,50 @@
 
 class DrawMatchingGame{
     constructor(){
-        //initalize the dialogs
-        /*
-        const container = document.querySelector('body main section#gameContainer section.endGameDialog');
-        container.innerHTML =  `
-                <button id="playAgain" class="gameDialogBut">play again</button>
-                <button id="back" class="gameDialogBut">to destination page</button>
-         `;
-         */
-      
+
+    }
+    toUtil(name){
+        if(name == "Easy"){
+            return 8;
+        }else if(name == "intermediate"){
+            return 4;
+        }else{
+            return 0;
+        }
     }
 
+    initalizeDefMenu(onDeficulatyPick){
+        const theContanier = document.querySelector('body section.game-info');
+        const theEle = document.createElement("div");
+        theEle.id = 'difficultyMenu';
+        theEle.innerHTML = `
+        <a id="difficultyLev">difficult level:</a>
+            <ul class="DropDwonMenu">
+                <li href="#">Easy</li>
+                <li href="#">intermediate</li>
+                <li href="#">Hard</li>
+            </ul>
+            `;
+        const theMenuEle = theEle.querySelector('ul.DropDwonMenu'); 
+        theMenuEle.querySelectorAll('li').forEach((item)=>{
+            //get levelNum
+            const levelNum = this.toUtil(item.textContent);
+            item.addEventListener("click",()=>{onDeficulatyPick(levelNum)
+                theMenuEle.classList.toggle("visable");
+            })
+        })
+        theEle.querySelector("a#difficultyLev").addEventListener("click",()=>{
+            console.log("click")
+
+            //show the menu
+            theMenuEle.classList.toggle("visable");
+        }) 
+        theContanier.appendChild(theEle);
+    }
+    
+
     cleanUiGameDeck(){
-        //document.querySelector('body main article#gameSection').innerHTML = '';
+        document.querySelector('body main article#gameSection').innerHTML = '';
     }
 
     /* 

@@ -1,26 +1,26 @@
-import drawMatchingGame from './drawMatchingGame.js';
-import games from './games.js';
 
-class MatchingGame {
-  #deck;
-  #openCardId;
-  #openPairs;
-  #sumOfPile;
-  #matchedCards;
+import drawMatchingGame from "./drawMatchingGame.js";
+import games from "./games.js";
 
-  constructor(gameCards) {
-    this.#deck = gameCards;
-    this.#openCardId = -1;
-    this.#openPairs = 0;
-    this.#sumOfPile = this.#deck.pileA.length;
-    this.#matchedCards = new Set();
+class MatchingGame{
+    #deck;
+    #openCardId;
+    #openPairs;
+    #sumOfPile;
+    #matchedCards;
 
-    this.initalizeDeck();
-  }
-
-  get deck() {
-    return this.#deck;
-  }
+    constructor(gameCards){
+        this.#deck = gameCards;
+        this.#openCardId = -1;
+        this.#openPairs = 0;  
+        this.#sumOfPile = this.#deck.pileA.length;
+        this.#matchedCards = new Set();
+        drawMatchingGame.initalizeDefMenu(this.initalizeDeck);
+    }
+ 
+    get deck(){
+        return this.#deck;
+    }
 
   get sumOfPile() {
     return this.#sumOfPile;
@@ -53,17 +53,17 @@ class MatchingGame {
         - draw the pile on the screen 
     */
 
-  initalizeDeck(crdsLevel) {
-    //get game ref
-    const matchedGameRef = games.matchingGameRef;
 
-    //need to clean the UI table before start
-    drawMatchingGame.cleanUiGameDeck();
-    for (let counter = 0; counter < this.#sumOfPile; counter++) {
-      drawMatchingGame.drawCard(this.deck.pileA[counter], 'typeA', this.onUserPick);
-      drawMatchingGame.drawCard(this.deck.pileB[this.sumOfPile - 1 - counter], 'typeB', this.onUserPick);
-    }
-  }
+    initalizeDeck(crdsLevel){
+        //get game ref 
+        const matchedGameRef = games.matchingGameRef;
+
+        //need to clean the UI table before start
+        drawMatchingGame.cleanUiGameDeck();
+        for(let counter = 0; counter < matchedGameRef.sumOfPile-crdsLevel; counter++){
+            drawMatchingGame.drawCard(matchedGameRef.deck.pileA[counter],"typeA",matchedGameRef.onUserPick);
+            drawMatchingGame.drawCard(matchedGameRef.deck.pileB[(matchedGameRef.sumOfPile-1)-counter],"typeB",matchedGameRef.onUserPick);
+
 
   onUserPick(theCardId) {
     const matchedGameRef = games.matchingGameRef;
