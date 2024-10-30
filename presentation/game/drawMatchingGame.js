@@ -1,19 +1,28 @@
 
+import util from "./util/util.js";
+
 class DrawMatchingGame{
     constructor(){
 
     }
-    toUtil(name){
-        if(name == "Easy"){
-            return 4;
-        }else if(name == "intermediate"){
-            return 8;
-        }else{
-            return 12;
-        }
+    
+    drawHeader(topicName,randomImg){
+        const theName = util.getDesNameById(topicName);
+        const  header = document.querySelector('body header div');
+        const theEle = document.createElement("div");
+        theEle.classList.add("topicHeader");
+        theEle.innerHTML = `
+            <img src="${randomImg}">
+            <h2>${theName}</h2>
+         `
+         header.appendChild(theEle);
     }
 
     initalizeDefMenu(onDeficulatyPick){
+        //header
+        const topicName = util.getDesNameById();
+
+
         const theContanier = document.querySelector('body section.game-info');
         const theEle = document.createElement("div");
         theEle.id = 'difficultyMenu';
@@ -28,7 +37,7 @@ class DrawMatchingGame{
         const theMenuEle = theEle.querySelector('ul.DropDwonMenu'); 
         theMenuEle.querySelectorAll('li').forEach((item)=>{
             //get levelNum
-            const levelNum = this.toUtil(item.textContent);
+            const levelNum = util.toUtil(item.textContent);
             item.addEventListener("click",()=>{onDeficulatyPick(levelNum)
                 theEle.querySelector("a#difficultyLev strong").textContent = ` ${item.textContent}`;
                 theMenuEle.classList.toggle("visable");

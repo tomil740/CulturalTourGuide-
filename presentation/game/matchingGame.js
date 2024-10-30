@@ -10,7 +10,11 @@ class MatchingGame{
     #sumOfPile;
     #matchedCards;
 
-    constructor(gameCards){
+    constructor(gameCards,topicName){
+
+      //draw header:
+      drawMatchingGame.drawHeader(topicName,gameCards.pileA[2].image);
+
         this.ogDeck = gameCards;
         this.#deck = gameCards;
         this.#openCardId = -1;

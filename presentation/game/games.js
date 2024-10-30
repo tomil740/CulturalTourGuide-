@@ -19,7 +19,7 @@ class Games{
     matchingGame(){
         repository.getMatchingGameData().then((a)=>
 
-            this.matchingGameRef = new MatchingGame(a)
+            this.matchingGameRef = new MatchingGame(a[0],a[1])
         
         );
     }
