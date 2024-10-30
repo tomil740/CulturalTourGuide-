@@ -20,22 +20,28 @@ class DrawMatchingGame{
      * will build a dynamic grid while applying matched id to each HTML item according to the object send to it (to gain controll over it)
     */
     drawCard(card,cardClassType,onUserPickCallBack){
-        const cardEle = document.createElement("div");
+        const cardEle = document.createElement("section");
         cardEle.classList.add("cardItem");
         cardEle.classList.add(`card-${cardClassType}`);
         cardEle.id = `card-${card.id+cardClassType}`;
-        cardEle.innerHTML = `<img src=${card.image}>
-                             <h3>${card.name}</h3>
-                             <div class=card-${cardClassType}><div/>   
-                             `;
+        cardEle.innerHTML = `<section class="card-down">
+                                    <section class="card-up">
+                                        <img src=${card.image}>
+                                        <h3>${card.name}</h3>
+                                    </section>
+                             </section> 
+                            `;
 
         cardEle.addEventListener("click",()=>{onUserPickCallBack(card.id+cardClassType)});
-
-        document.querySelector('body main article#gameSection').appendChild(
-            cardEle
-        );     
-            
+        document.querySelector(".matching-game").appendChild(cardEle);
     }
+
+
+    exposeCard(cardId) {
+        const cardUpElement = document.querySelector(`#card-${cardId} .card-up`);
+        if (cardUpElement) {
+            cardUpElement.classList.toggle("expose");
+        }
 
     async updateProgBar(progPrecent){
         const progBarEle = document.querySelector('body main section#gameContainer div.progBarContainer div.progBar');
@@ -54,10 +60,7 @@ class DrawMatchingGame{
         
     }
 
-    exposeCard(cardId){
-        const theEle = document.querySelector(`body main article#gameSection div.cardItem#card-${cardId} div`);  
-        theEle.classList.toggle("expose")
-    }
+
 
     onPair(card1Id,card2Id){
         const a = document.querySelector(`body main article#gameSection div.cardItem#card-${card1Id}`);

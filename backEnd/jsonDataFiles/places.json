@@ -3,7 +3,7 @@
     "id": "123",
     "city": "Jerusalem",
     "population": 8000000,
-    "imgUrls": ["https://t4.ftcdn.net/jpg/06/01/54/75/360_F_601547536_E7ovUzbSUOCnoodB9At0wWnyzpUlgnwf.jpg"],
+    "imgUrls": ["https://plus.unsplash.com/premium_photo-1697730130972-627b46998282?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
     "summary": "test test",
     "category": ["rests", "hotels"],
     "loc": {
@@ -64,5 +64,68 @@
     "summary": "An ancient city with a mix of cultures and modern transportation hub.",
     "category": ["history", "transport"],
     "loc": { "lat": 31.9514, "lng": 34.8953 }
+  },
+  {
+    "id": "130",
+    "city": "Safed",
+    "population": 35000,
+    "imgUrls": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2Gi_nwySvIdjGsCoKrsnDqeS91_1EVipq0g&s"],
+    "summary": "A hilltop city known for its Kabbalistic history and vibrant artist community.",
+    "category": ["religion", "art"],
+    "loc": { "lat": 32.966, "lng": 35.496 }
+  },
+  {
+    "id": "131",
+    "city": "Tiberias",
+    "population": 44000,
+    "imgUrls": ["https://images.squarespace-cdn.com/content/v1/5a87961cbe42d637c54cab93/995a89c4-5ea8-4ccb-ba4e-98f194231cd5/tiberias-travel-guide.jpg"],
+    "summary": "A city on the Sea of Galilee, important to both Jewish and Christian traditions.",
+    "category": ["religion", "waterfront"],
+    "loc": { "lat": 32.7922, "lng": 35.528 }
+  },
+  {
+    "id": "132",
+    "city": "Hebron",
+    "population": 215000,
+    "imgUrls": ["https://hebronfund.org/wp-content/uploads/2019/07/tower-of-david.jpg"],
+    "summary": "An ancient city with a significant history for Jews and Muslims, home to the Tomb of the Patriarchs.",
+    "category": ["religion", "history"],
+    "loc": { "lat": 31.5326, "lng": 35.0998 }
+  },
+  {
+    "id": "133",
+    "city": "Be'er Sheva",
+    "population": 209000,
+    "imgUrls": ["https://www.beer-sheva.muni.il/Visitors/OldCity/PublishingImages/DPP_0146.JPG"],
+    "summary": "A desert city with a rich biblical heritage and a modern university.",
+    "category": ["education", "history"],
+    "loc": { "lat": 31.252, "lng": 34.7915 }
+  },
+  {
+    "id": "134",
+    "city": "Ashkelon",
+    "population": 140000,
+    "imgUrls": ["https://www.shutterstock.com/image-photo/ashkelon-israel-july-19-2024-600nw-2493868663.jpg"],
+    "summary": "A coastal city with ancient ruins and a modern marina.",
+    "category": ["coast", "history"],
+    "loc": { "lat": 31.6693, "lng": 34.5743 }
+  },
+  {
+    "id": "137",
+    "city": "Bethlehem",
+    "population": 28000,
+    "imgUrls": ["https://www.learnreligions.com/thmb/0iQQeBfUVdgWHBkjPlH--6vzUGk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Bethlehem-at-Night-533543800-58e7be623df78c51624f1172.jpg"],
+    "summary": "The birthplace of Jesus, visited by both Christian and Muslim pilgrims.",
+    "category": ["religion", "tourism"],
+    "loc": { "lat": 31.7054, "lng": 35.2024 }
+  },
+  {
+    "id": "139",
+    "city": "Kiryat Shmona",
+    "population": 23000,
+    "imgUrls": ["https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/98/6b/25/caption.jpg?w=1400&h=1400&s=1"],
+    "summary": "A northern city near the Lebanese border with a diverse population and natural attractions.",
+    "category": ["nature", "culture"],
+    "loc": { "lat": 33.2088, "lng": 35.5705 }
   }
 ]
