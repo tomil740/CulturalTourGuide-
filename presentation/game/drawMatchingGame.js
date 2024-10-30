@@ -34,8 +34,6 @@ class DrawMatchingGame{
             })
         })
         theEle.querySelector("a#difficultyLev").addEventListener("click",()=>{
-            console.log("click")
-
             //show the menu
             theMenuEle.classList.toggle("visable");
         }) 

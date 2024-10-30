@@ -63,7 +63,7 @@ body{
 
 .card-down, .card-up.expose{
     max-height: 17vh;
-    width: 100%;
+    width: 100%; 
     height: 100%;
     object-fit: cover;
     border-radius: 1rem;
