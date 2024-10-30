@@ -1,3 +1,5 @@
+import repository from '../../../domain/repository.js';
+
 window.addEventListener('load', initMap);
 
 let map;
@@ -47,6 +49,13 @@ function addMarkers(destinations) {
       infoWindow.open(map, marker);
     });
 
+    marker.addListener('click', () => {
+      infoWindow.open(map, marker).addEventListener('click', () => {
+        repository.saveCurrentDesId(destination.id);
+        window.location.href = `../destinationScreen/destination.html#destination-${destination.id}`;
+      });
+    });
+
     markers.push(marker);
   });
 }
@@ -82,6 +91,8 @@ function generateCards(destinations) {
     `;
 
     card.addEventListener('click', () => {
+      repository.saveCurrentDesId(destination.id);
+
       handleCardClick(destination);
     });
 
