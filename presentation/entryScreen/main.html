@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/culToural_favicon_16x16.png " />
     <link rel="styleSheet" type="text/css" href="../styles/main.css" />
-    <title>culToural</title>
+    <title>culToural app</title>
   </head>
   <body>
     <header>
@@ -24,11 +24,18 @@
     </header>
     <main class="main-container">
       <article id="listDestinationsMenu"></article>
+      <section id="map"></section>
+      <button id="showMapBtn" class="showMapBtn">Show Map</button>
     </main>
 
     <footer>
       <p>&copy; 2023 CulToural. All rights reserved.</p>
     </footer>
+
+    <script src="../util.service.js"></script>
+    <script src="../storge.service.js"></script>
+    <script src="../entryScreen/map/places.controller.js"></script>
     <script type="module" src="./Entry.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpQLH-jeyCxrhaCOaPgN6eSwM7seybvSI&callback=initMap" async defer></script>
   </body>
 </html>

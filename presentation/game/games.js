@@ -12,9 +12,14 @@ class Games{
         return this.#matchingGameRef;
     }
 
+    set matchingGameRef(arg){
+        this.#matchingGameRef = arg;
+    }
+
     matchingGame(){
-        const a = repository.getMatchingGameData();
-        return new MatchingGame(a);
+        repository.getMatchingGameData().then((a)=>
+            this.matchingGameRef = new MatchingGame(a)
+        );
     }
 }
 

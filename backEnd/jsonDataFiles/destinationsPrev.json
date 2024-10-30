@@ -1,0 +1,37 @@
+[
+  {
+    "id": 123,
+    "name": "Jerusalem",
+    "image": "https://plus.unsplash.com/premium_photo-1697730130972-627b46998282?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": 124,
+    "name": "Tel aviv- jaffa",
+    "image": "https://plus.unsplash.com/premium_photo-1697730177654-75dfc22bc231?q=80&w=2070&auto=format&fit=crop"
+  },
+  {
+    "id": 125,
+    "name": "Haifa",
+    "image": "https://images.unsplash.com/photo-1628405633956-385f623b767d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": 126,
+    "name": "Nazareth",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Nazareth_Panorama_Dafna_Tal_IMOT_%2814532097313%29.jpg/800px-Nazareth_Panorama_Dafna_Tal_IMOT_%2814532097313%29.jpg"
+  },
+  {
+    "id": 127,
+    "name": "Acre",
+    "image": "https://images.unsplash.com/photo-1691071100985-72b022edee92?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": 128,
+    "name": "Ramla",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKU8YSR8mnDerlaidRmEafFvcqi91Fb44o39RTYLl3VO2Qr9OiCBdadkJiAp4nabUy9yI&usqp=CAU"
+  },
+  {
+    "id": 129,
+    "name": "Lod",
+    "image": "https://www.streetsigns.co.il/Images/extra/c1749.jpg"
+  }
+]
