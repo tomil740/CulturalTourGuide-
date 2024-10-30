@@ -1,6 +1,7 @@
 
 import drawMatchingGame from "./drawMatchingGame.js";
 import games from "./games.js";
+import MatchingCards from "../../domain/models/MatchingCards.js";
 
 class MatchingGame{
     #deck;
@@ -16,21 +17,32 @@ class MatchingGame{
         this.#sumOfPile = this.#deck.pileA.length;
         this.#matchedCards = new Set();
         drawMatchingGame.initalizeDefMenu(this.initalizeDeck);
+
     }
  
     get deck(){
         return this.#deck;
     }
+    set deck(aDeck) {
+      this.#deck = aDeck;
+    }
+
 
   get sumOfPile() {
     return this.#sumOfPile;
   }
 
-  set sumOfPile(crdsLevel) {}
+  set sumOfPile(crdsLevel) {
+    this.#sumOfPile = crdsLevel;
+  }
 
   get matchedCards() {
     return this.#matchedCards;
   }
+  set matchedCards(matchedCards) {
+    this.#matchedCards =matchedCards;
+  }
+
 
   get openCardId() {
     return this.#openCardId;
@@ -53,19 +65,66 @@ class MatchingGame{
         - draw the pile on the screen 
     */
 
-
-    initalizeDeck(crdsLevel){
-        //get game ref 
+initalizeDeck(crdsLevel){
+  //get game ref 
         const matchedGameRef = games.matchingGameRef;
+        matchedGameRef.initGameData(crdsLevel);
+
+        const aRandomLst = matchedGameRef.getListRandomIndex(matchedGameRef.deck.pileA);
+        const bRandomLst = matchedGameRef.getListRandomIndex(matchedGameRef.deck.pileA);
 
         //need to clean the UI table before start
         drawMatchingGame.cleanUiGameDeck();
-        for(let counter = 0; counter < matchedGameRef.sumOfPile-crdsLevel; counter++){
-            drawMatchingGame.drawCard(matchedGameRef.deck.pileA[counter],"typeA",matchedGameRef.onUserPick);
-            drawMatchingGame.drawCard(matchedGameRef.deck.pileB[(matchedGameRef.sumOfPile-1)-counter],"typeB",matchedGameRef.onUserPick);
-        }
-    }
 
+        for(let index = 0; index < aRandomLst.length; index++){
+          console.log(matchedGameRef.deck.pileA[aRandomLst[index]]);
+
+            drawMatchingGame.drawCard(matchedGameRef.deck.pileA[aRandomLst[index]],"typeA",matchedGameRef.onUserPick);
+            drawMatchingGame.drawCard(matchedGameRef.deck.pileB[bRandomLst[index]],"typeB",matchedGameRef.onUserPick);
+        }
+} 
+
+/*
+initGameData:
+  * will generate matcehd level object data and restart all of the properties.
+*/
+  initGameData(crdsLevel){
+    const matchedGameRef = games.matchingGameRef;
+    //const resData = new MatchingCards()
+    const pileA = [];
+    const pileB = [];
+
+    for(let theIndex = 0; theIndex < crdsLevel; theIndex++){
+      pileA.push(matchedGameRef.deck.pileA[theIndex]);
+      pileB.push(matchedGameRef.deck.pileB[theIndex]);
+    }
+      const a = new MatchingCards(pileA,pileB);
+      matchedGameRef.deck = a;
+      matchedGameRef.openCardId = -1;
+      matchedGameRef.openPairs = 0;  
+      matchedGameRef.sumOfPile = matchedGameRef.deck.pileA.length;
+      matchedGameRef.matchedCards = new Set();
+   
+  }
+
+
+  getListRandomIndex(fullCollection){
+    //get the index list to mix
+    let randomLst = [];
+    for(let num = 0; num < fullCollection.length; num++){
+      randomLst.push(num);
+    }
+    const res = [];
+    for(let resItem = 0; res.length < fullCollection.length; resItem++){
+      const a = Math.floor(Math.random() * randomLst.length);
+      res.push(randomLst[a]);
+      const r = randomLst.slice(0,a);
+      randomLst = r.concat(randomLst.slice(a+1));
+      console.log(res);
+    }
+    return res;
+
+  }
 
   onUserPick(theCardId) {
     const matchedGameRef = games.matchingGameRef;

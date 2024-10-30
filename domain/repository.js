@@ -56,7 +56,7 @@ class Repository {
     });
   }
 
-  getMatchingGameData() {
+  getMatchingGameData() { 
     return new Promise((resolve, reject) => {
       //get the current des
       const currentDes = this.getCurrentDesId();
