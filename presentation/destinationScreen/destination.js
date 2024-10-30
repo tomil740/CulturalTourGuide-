@@ -21,7 +21,6 @@ class Destination {
 
   onStartGame(){
     window.location.href = '../game/game.html';
-
   }
 }
 

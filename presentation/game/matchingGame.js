@@ -15,21 +15,33 @@ class MatchingGame{
         this.#sumOfPile = this.#deck.pileA.length;
         this.#matchedCards = new Set();
 
-        this.#initalizeDeck();
+        this.initalizeDeck();
     }
  
     get sumOfPile(){
         return this.#sumOfPile;
     }
 
+    set sumOfPile(crdsLevel){
+
+    }
+
     /*
         - shuffle the pile
         - draw the pile on the screen 
     */
-    #initalizeDeck(){
-        for(let counter = 0; counter < this.#sumOfPile; counter++){
-            drawMatchingGame.drawCard(this.#deck.pileA[counter],"typeA",this.onUserPick);
-            drawMatchingGame.drawCard(this.#deck.pileB[(this.#sumOfPile-1)-counter],"typeB",this.onUserPick);
+
+    initalizeDeck(crdsLevel){
+        //get game ref 
+        const matchedGameRef = games.matchingGameRef;
+
+        //need to clean the UI table before start
+        drawMatchingGame.cleanUiGameDeck();
+
+        for(let counter = 0; counter < this.sumOfPile; counter++){
+            drawMatchingGame.drawCard(this.deck.pileA[counter],"typeA",this.onUserPick);
+            drawMatchingGame.drawCard(this.deck.pileB[(this.sumOfPile-1)-counter],"typeB",this.onUserPick);
+
         }
     }
 
@@ -37,6 +49,9 @@ class MatchingGame{
         const matchedGameRef = games.matchingGameRef;
         /*
             for our Html we use the full typed id,for this function we will cut the type...
+            that is useful to:
+            * find when the user click on the same card by "&& (theCardId!=matchedGameRef.openCardId)"
+            * and from the other hand find matches with the other option
         */
 
         // Check if the card is already matched
@@ -54,6 +69,7 @@ class MatchingGame{
 
         drawMatchingGame.exposeCard(theCardId);
 
+
         if (matchedGameRef.#openCardId !== -1) {
             const prevCardId = matchedGameRef.#openCardId.slice(0, matchedGameRef.#openCardId.length - 1);
             if (prevCardId === argCardId) {
@@ -63,6 +79,15 @@ class MatchingGame{
                 matchedGameRef.#matchedCards.add(matchedGameRef.#openCardId); 
                 console.log(matchedGameRef.#openPairs);
                 matchedGameRef.#openCardId = -1;
+/*
+        if(matchedGameRef.openCardId != -1){
+            const prevCardId =  matchedGameRef.openCardId.slice(0, matchedGameRef.openCardId.length-1); 
+            if(prevCardId == argCardId && (theCardId!=matchedGameRef.openCardId)){
+                matchedGameRef.openPairs++;
+                drawMatchingGame.onPair(theCardId,matchedGameRef.openCardId);
+                matchedGameRef.openCardId = -1;
+                */
+
                 matchedGameRef.isCompleted();
             } else {
                 setTimeout(() => {
@@ -78,6 +103,7 @@ class MatchingGame{
 
     isCompleted() {
         const matchedGameRef = games.matchingGameRef;
+
     
         if (matchedGameRef.#openPairs === matchedGameRef.sumOfPile) {
             console.log("Game Completed!");
@@ -107,6 +133,17 @@ class MatchingGame{
             document.querySelector(".matching-game").appendChild(overlay);
     
             this.#showConfetti();
+
+        const progress = (matchedGameRef.openPairs/matchedGameRef.sumOfPile);
+         //to precentages
+        if(matchedGameRef.openPairs == matchedGameRef.sumOfPile){
+            drawMatchingGame.updateProgBar(100);
+            drawMatchingGame.onGameEndDialog();
+            ////finesh...
+        }else{
+            drawMatchingGame.updateProgBar(progress*100);
+            drawMatchingGame.onGameEndDialog();
+
         }
     }
 
