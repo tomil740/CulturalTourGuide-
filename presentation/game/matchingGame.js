@@ -6,11 +6,14 @@ class MatchingGame{
     #openCardId;
     #openPairs;
     #sumOfPile;
+    #matchedCards;
+
     constructor(gameCards){
         this.#deck = gameCards;
         this.#openCardId = -1;
         this.#openPairs = 0;  
         this.#sumOfPile = this.#deck.pileA.length;
+        this.#matchedCards = new Set();
 
         this.#initalizeDeck();
     }
@@ -35,28 +38,43 @@ class MatchingGame{
         /*
             for our Html we use the full typed id,for this function we will cut the type...
         */
-       //cardId  => argCardId
-        const argCardId = theCardId.slice(0,theCardId.length-1);
+
+        // Check if the card is already matched
+        if (matchedGameRef.#matchedCards.has(theCardId)) {
+            return; 
+        }
+
+        // Check if the card is already open
+        if (matchedGameRef.#openCardId === theCardId) {
+            return; 
+        }
+
+        // cardId => argCardId
+        const argCardId = theCardId.slice(0, theCardId.length - 1);
 
         drawMatchingGame.exposeCard(theCardId);
 
-        if(matchedGameRef.#openCardId != -1){
-            const prevCardId =  matchedGameRef.#openCardId.slice(0, matchedGameRef.#openCardId.length-1); 
-            if(prevCardId === argCardId){
+        if (matchedGameRef.#openCardId !== -1) {
+            const prevCardId = matchedGameRef.#openCardId.slice(0, matchedGameRef.#openCardId.length - 1);
+            if (prevCardId === argCardId) {
                 console.log("Matched!");
                 matchedGameRef.#openPairs++;
+                matchedGameRef.#matchedCards.add(theCardId); 
+                matchedGameRef.#matchedCards.add(matchedGameRef.#openCardId); 
                 console.log(matchedGameRef.#openPairs);
                 matchedGameRef.#openCardId = -1;
                 matchedGameRef.isCompleted();
-            }else{
-                drawMatchingGame.exposeCard(theCardId);
-                drawMatchingGame.exposeCard(matchedGameRef.#openCardId);
-                matchedGameRef.#openCardId = -1;
+            } else {
+                setTimeout(() => {
+                    drawMatchingGame.exposeCard(theCardId);
+                    drawMatchingGame.exposeCard(matchedGameRef.#openCardId);
+                    matchedGameRef.#openCardId = -1;
+                }, 1000); 
             }
-        }else{
-            matchedGameRef.#openCardId = theCardId;
+        } else {
+            matchedGameRef.#openCardId = theCardId; 
         }
-    }
+}
 
     isCompleted() {
         const matchedGameRef = games.matchingGameRef;
