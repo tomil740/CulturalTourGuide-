@@ -22,7 +22,8 @@ class ServerDao{
 
     getDestinationGameById(theId){
         return new Promise((resolve,reject)=>{
-            fetch(`${this.baseRout}/desGames/${theId}`).then((response)=>response.json().then((data)=>{resolve(data)}));
+            fetch(`${this.baseRout}/desGames/${theId}`).then((response)=>response.json().then((data)=>{
+                resolve(data)}));
         });  
     }
 

@@ -2,16 +2,18 @@
 class DrawMatchingGame{
     constructor(){
         //initalize the dialogs
+        /*
         const container = document.querySelector('body main section#gameContainer section.endGameDialog');
         container.innerHTML =  `
                 <button id="playAgain" class="gameDialogBut">play again</button>
                 <button id="back" class="gameDialogBut">to destination page</button>
          `;
+         */
       
     }
 
     cleanUiGameDeck(){
-        document.querySelector('body main article#gameSection').innerHTML = '';
+        //document.querySelector('body main article#gameSection').innerHTML = '';
     }
 
     /*
@@ -30,7 +32,7 @@ class DrawMatchingGame{
                                         <h3>${card.name}</h3>
                                     </section>
                              </section> 
-                            `;
+                            `; 
 
         cardEle.addEventListener("click",()=>{onUserPickCallBack(card.id+cardClassType)});
         document.querySelector(".matching-game").appendChild(cardEle);
@@ -42,6 +44,7 @@ class DrawMatchingGame{
         if (cardUpElement) {
             cardUpElement.classList.toggle("expose");
         }
+    }
 
     async updateProgBar(progPrecent){
         const progBarEle = document.querySelector('body main section#gameContainer div.progBarContainer div.progBar');
@@ -56,7 +59,6 @@ class DrawMatchingGame{
                 progBarEle.textContent = String(width).slice(0,3) * 1  + '%';
             }
         }
-    
         
     }
 
