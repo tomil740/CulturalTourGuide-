@@ -16,13 +16,13 @@ class DrawMatchingGame{
         //document.querySelector('body main article#gameSection').innerHTML = '';
     }
 
-    /*
+    /* 
     will add a card element to our deck UI with the matched css class according to its type
     note :
      * will build a dynamic grid while applying matched id to each HTML item according to the object send to it (to gain controll over it)
     */
     drawCard(card,cardClassType,onUserPickCallBack){
-        const cardEle = document.createElement("section");
+        const cardEle = document.createElement("section"); 
         cardEle.classList.add("cardItem");
         cardEle.classList.add(`card-${cardClassType}`);
         cardEle.id = `card-${card.id+cardClassType}`;
@@ -35,7 +35,7 @@ class DrawMatchingGame{
                             `; 
 
         cardEle.addEventListener("click",()=>{onUserPickCallBack(card.id+cardClassType)});
-        document.querySelector(".matching-game").appendChild(cardEle);
+        document.querySelector("body main section article#gameSection").appendChild(cardEle);
     }
 
 
