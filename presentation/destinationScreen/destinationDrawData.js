@@ -6,11 +6,6 @@ class DestinationDrawData {
 
     const mainContainer = document.querySelector("#destinationContent");
 
-    // initial div to make sure everything is correct
-    // const ele = document.createElement("div");
-    // ele.innerHTML = `<h3>working with the obj ${this.destinationObj["city"]}</h3>`;
-    // mainContainer.appendChild(ele);
-
     // append the other data elements
     this.createDataEl(mainContainer);
 
