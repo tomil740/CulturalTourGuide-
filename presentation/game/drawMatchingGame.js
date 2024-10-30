@@ -5,11 +5,11 @@ class DrawMatchingGame{
     }
     toUtil(name){
         if(name == "Easy"){
-            return 8;
-        }else if(name == "intermediate"){
             return 4;
+        }else if(name == "intermediate"){
+            return 8;
         }else{
-            return 0;
+            return 12;
         }
     }
 
