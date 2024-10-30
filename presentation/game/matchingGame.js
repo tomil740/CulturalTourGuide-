@@ -63,6 +63,8 @@ class MatchingGame{
         for(let counter = 0; counter < matchedGameRef.sumOfPile-crdsLevel; counter++){
             drawMatchingGame.drawCard(matchedGameRef.deck.pileA[counter],"typeA",matchedGameRef.onUserPick);
             drawMatchingGame.drawCard(matchedGameRef.deck.pileB[(matchedGameRef.sumOfPile-1)-counter],"typeB",matchedGameRef.onUserPick);
+        }
+    }
 
 
   onUserPick(theCardId) {
