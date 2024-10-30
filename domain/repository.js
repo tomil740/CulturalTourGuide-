@@ -1,9 +1,9 @@
 //import Server dao/
-import DestinationPrev from "./models/DestinationPrev.js";
-import { serverDao } from "../data/serverDao.js";
-import CardItem from "./models/CardItem.js";
-import Destination from "./models/Destination.js";
-import MatchingCards from "./models/MatchingCards.js";
+import DestinationPrev from './models/DestinationPrev.js';
+import { serverDao } from '../data/serverDao.js';
+import CardItem from './models/CardItem.js';
+import Destination from './models/Destination.js';
+import MatchingCards from './models/MatchingCards.js';
 
 class Repository {
   constructor() {
@@ -13,11 +13,11 @@ class Repository {
   }
 
   saveCurrentDesId(theId) {
-    localStorage.setItem("currentDesId", theId);
+    localStorage.setItem('currentDesId', theId);
   }
 
   getCurrentDesId() {
-    const res = localStorage.getItem("currentDesId");
+    const res = localStorage.getItem('currentDesId');
     if (res == null) {
       return -1;
     }
@@ -51,7 +51,7 @@ class Repository {
     return new Promise((resolve, reject) => {
       const theId = this.getCurrentDesId();
       serverDao.getDestinationById(theId).then((data) => {
-        resolve(new Destination(data.des));
+        resolve(new Destination(data));
       });
     });
   }
@@ -60,7 +60,7 @@ class Repository {
     return new Promise((resolve, reject) => {
       //get the current des
       const currentDes = this.getCurrentDesId();
-      console.log("picked ", currentDes);
+      console.log('picked ', currentDes);
       //pull from the api the matched data according to our picked destination id;
       // const theData =
       // const a = theData;
@@ -72,20 +72,8 @@ class Repository {
         const pileA = [];
         const pileB = [];
         for (let itemIndex = 0; itemIndex < a.length; itemIndex++) {
-          pileA.push(
-            new CardItem(
-              itemIndex,
-              a[itemIndex].image,
-              a[itemIndex].nameInArabic
-            )
-          );
-          pileB.push(
-            new CardItem(
-              itemIndex,
-              a[itemIndex].image,
-              a[itemIndex].nameInHebrew
-            )
-          );
+          pileA.push(new CardItem(itemIndex, a[itemIndex].image, a[itemIndex].nameInArabic));
+          pileB.push(new CardItem(itemIndex, a[itemIndex].image, a[itemIndex].nameInHebrew));
         }
 
         resolve(new MatchingCards(pileA, pileB));
