@@ -64,8 +64,47 @@ class MatchingGame{
         if (matchedGameRef.#openPairs === matchedGameRef.sumOfPile) {
             console.log("Game Completed!");
     
+            const overlay = document.createElement("section");
+            overlay.classList.add("game-completed");
+    
+            const messageContainer = document.createElement("section");
+            messageContainer.classList.add("completion-message");
+    
+            messageContainer.innerHTML = `
+                <h1>Congratulations!</h1>
+                <p>You've matched all pairs!</p>
+            `;
+    
+            const playAgainButton = document.createElement("button");
+            playAgainButton.classList.add("play-again-btn");
+            playAgainButton.textContent = "Play Again";
+            playAgainButton.addEventListener("click", () => {
+                document.querySelector(".matching-game").removeChild(overlay);
+                document.querySelectorAll(".confetti").forEach(confetti => confetti.remove());
+                location.reload(); 
+            });
+    
+            messageContainer.appendChild(playAgainButton);
+            overlay.appendChild(messageContainer);
+            document.querySelector(".matching-game").appendChild(overlay);
+    
+            this.#showConfetti();
         }
     }
+
+    // Confetti effect function
+    #showConfetti() {
+    const confettiColors = ["DodgerBlue","Gold","SlateBlue","LightBlue","Violet","SteelBlue","SandyBrown","Crimson"];
+
+    for (let i = 0; i < 100; i++) {
+        const confetti = document.createElement("section");
+        confetti.classList.add("confetti");
+        confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+        confetti.style.left = `${Math.random() * 100}vw`;
+        confetti.style.animationDelay = `${Math.random() * 3}s`;
+        document.querySelector(".matching-game").appendChild(confetti);
+    }
+}    
     
 }
 
