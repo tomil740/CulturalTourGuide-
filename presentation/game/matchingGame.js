@@ -18,6 +18,10 @@ class MatchingGame{
         this.initalizeDeck();
     }
  
+    get deck(){
+        return this.#deck;
+    }
+
     get sumOfPile(){
         return this.#sumOfPile;
     }
@@ -25,6 +29,27 @@ class MatchingGame{
     set sumOfPile(crdsLevel){
 
     }
+
+    get matchedCards(){
+        return this.#matchedCards;
+    }
+
+    get openCardId(){
+        return this.#openCardId;
+    }
+
+    set openCardId(cardId){
+        this.#openCardId = cardId;
+    }
+
+    get openPairs(){
+        return this.#openPairs;
+    }
+
+    set openPairs(openPairs){
+        this.#openPairs = openPairs;
+    }
+
 
     /*
         - shuffle the pile
@@ -37,8 +62,7 @@ class MatchingGame{
 
         //need to clean the UI table before start
         drawMatchingGame.cleanUiGameDeck();
-
-        for(let counter = 0; counter < this.sumOfPile; counter++){
+        for(let counter = 0; counter < this.#sumOfPile; counter++){
             drawMatchingGame.drawCard(this.deck.pileA[counter],"typeA",this.onUserPick);
             drawMatchingGame.drawCard(this.deck.pileB[(this.sumOfPile-1)-counter],"typeB",this.onUserPick);
 
@@ -55,12 +79,14 @@ class MatchingGame{
         */
 
         // Check if the card is already matched
-        if (matchedGameRef.#matchedCards.has(theCardId)) {
+        
+        if (matchedGameRef.matchedCards.has(theCardId)) {
             return; 
         }
+            
 
         // Check if the card is already open
-        if (matchedGameRef.#openCardId === theCardId) {
+        if (matchedGameRef.openCardId === theCardId) {
             return; 
         }
 
@@ -70,15 +96,16 @@ class MatchingGame{
         drawMatchingGame.exposeCard(theCardId);
 
 
-        if (matchedGameRef.#openCardId !== -1) {
-            const prevCardId = matchedGameRef.#openCardId.slice(0, matchedGameRef.#openCardId.length - 1);
+        if (matchedGameRef.openCardId !== -1) {
+            const prevCardId = matchedGameRef.openCardId.slice(0, matchedGameRef.openCardId.length - 1);
+            console.log(prevCardId,argCardId);
             if (prevCardId === argCardId) {
                 console.log("Matched!");
-                matchedGameRef.#openPairs++;
-                matchedGameRef.#matchedCards.add(theCardId); 
-                matchedGameRef.#matchedCards.add(matchedGameRef.#openCardId); 
-                console.log(matchedGameRef.#openPairs);
-                matchedGameRef.#openCardId = -1;
+                matchedGameRef.openPairs++;
+                matchedGameRef.matchedCards.add(theCardId); 
+                matchedGameRef.matchedCards.add(matchedGameRef.openCardId); 
+                console.log(matchedGameRef.openPairs);
+                matchedGameRef.openCardId = -1;
 /*
         if(matchedGameRef.openCardId != -1){
             const prevCardId =  matchedGameRef.openCardId.slice(0, matchedGameRef.openCardId.length-1); 
@@ -92,12 +119,12 @@ class MatchingGame{
             } else {
                 setTimeout(() => {
                     drawMatchingGame.exposeCard(theCardId);
-                    drawMatchingGame.exposeCard(matchedGameRef.#openCardId);
-                    matchedGameRef.#openCardId = -1;
+                    drawMatchingGame.exposeCard(matchedGameRef.openCardId);
+                    matchedGameRef.openCardId = -1;
                 }, 1000); 
             }
         } else {
-            matchedGameRef.#openCardId = theCardId; 
+            matchedGameRef.openCardId = theCardId; 
         }
 }
 
@@ -105,7 +132,7 @@ class MatchingGame{
         const matchedGameRef = games.matchingGameRef;
 
     
-        if (matchedGameRef.#openPairs === matchedGameRef.sumOfPile) {
+        if (matchedGameRef.openPairs === matchedGameRef.sumOfPile) {
             console.log("Game Completed!");
     
             const overlay = document.createElement("section");
@@ -145,10 +172,12 @@ class MatchingGame{
             drawMatchingGame.onGameEndDialog();
 
         }
+        
     }
+}
 
     // Confetti effect function
-    #showConfetti() {
+    #showConfetti(){
     const confettiColors = ["DodgerBlue","Gold","SlateBlue","LightBlue","Violet","SteelBlue","SandyBrown","Crimson"];
 
     for (let i = 0; i < 100; i++) {
@@ -158,9 +187,10 @@ class MatchingGame{
         confetti.style.left = `${Math.random() * 100}vw`;
         confetti.style.animationDelay = `${Math.random() * 3}s`;
         document.querySelector(".matching-game").appendChild(confetti);
+    }     
     }
-}    
-    
+
 }
+
 
 export default MatchingGame;

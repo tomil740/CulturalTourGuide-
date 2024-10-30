@@ -25,10 +25,10 @@ app.get('/places', (req, res) => {
   res.json(destinations);
 });
 
-// app.get('/desGames/:desId', (req, res) => {
-//   const desGames = fns.getLoadedData('desGames');
-//   res.json(desGames);
-// });
+ app.get('/desGames/:desId', (req, res) => {
+   const desGames = fns.getLoadedData('desGames');
+   res.json(desGames);
+ });
 
 app.get('/destinations/:desId', (req, res) => {
   const destinations = fns.getLoadedData('destinations');

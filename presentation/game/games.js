@@ -18,7 +18,9 @@ class Games{
 
     matchingGame(){
         repository.getMatchingGameData().then((a)=>
+
             this.matchingGameRef = new MatchingGame(a)
+        
         );
     }
 }
