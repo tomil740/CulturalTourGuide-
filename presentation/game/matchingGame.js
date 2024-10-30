@@ -14,8 +14,7 @@ class MatchingGame{
         this.#openPairs = 0;  
         this.#sumOfPile = this.#deck.pileA.length;
         this.#matchedCards = new Set();
-
-        this.initalizeDeck();
+        drawMatchingGame.initalizeDefMenu(this.initalizeDeck);
     }
  
     get deck(){
@@ -62,9 +61,9 @@ class MatchingGame{
 
         //need to clean the UI table before start
         drawMatchingGame.cleanUiGameDeck();
-        for(let counter = 0; counter < this.#sumOfPile-1; counter++){
-            drawMatchingGame.drawCard(this.deck.pileA[counter],"typeA",this.onUserPick);
-            drawMatchingGame.drawCard(this.deck.pileB[(this.sumOfPile-1)-counter],"typeB",this.onUserPick);
+        for(let counter = 0; counter < matchedGameRef.sumOfPile-crdsLevel; counter++){
+            drawMatchingGame.drawCard(matchedGameRef.deck.pileA[counter],"typeA",matchedGameRef.onUserPick);
+            drawMatchingGame.drawCard(matchedGameRef.deck.pileB[(matchedGameRef.sumOfPile-1)-counter],"typeB",matchedGameRef.onUserPick);
 
         }
     }
