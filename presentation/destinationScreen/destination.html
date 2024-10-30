@@ -8,23 +8,27 @@
     <script type="module" src="./destination.js" defer></script>
   </head>
 
-  <body class="flex justify-between align-center">
-    <header class="flex align-center">
-      <a href="../entryScreen/main.html">
-        <img
-          id="logo"
-          src="../../assets/culToural_logo_clean_final-removebg-preview (2).png"
-          alt="logo"
-        />
-        explore more cities
-      </a>
-      <h1 id="cityName"></h1>
+  <body>
+    <header>
+      <section class="flex align-center">
+        <a href="../entryScreen/main.html">
+          <img id="logo" src="../../assets/culToural_logo_clean_final-removebg-preview (2).png" alt="logo" />
+          <h1>Cultural Tour Guide</h1>
+        </a>
+      </section>
+
+      <nav>
+        <ul class="navbar">
+          <li><a href="../dictionary/dictionary.html">Hebrew-Arabic Dictionary</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main class="flex align-center">
-      <button id="activateGame">test your knowledge!</button>
+      <button id="activateGame">Test your knowledge!</button>
       <section class="container flex align-center justify-between">
         <!-- destination.js will add content from json data here -->
+        <h1 id="cityName"></h1>
         <div id="destinationContent"></div>
       </section>
     </main>
