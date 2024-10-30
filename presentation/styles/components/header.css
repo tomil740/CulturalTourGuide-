@@ -52,28 +52,37 @@ header a {
   display: flex;
 }
 
+div#difficultyMenu a strong{
+  color: var(--color-primary);
+  font-weight: 900;
+  font-size: 30px;
+  background-color: rgb(255, 255, 255,75%);
+  border-radius: 15px;
+  padding: 3px;
+}
+
  div#difficultyMenu a:hover{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 15px;
-  background-color: wheat;
-  color: #4c626a;
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
   font-weight: 700;
 }
 
 div#difficultyMenu ul.DropDwonMenu{
   visibility:hidden;
   position: absolute;
-  top: 65%;
-  left: -10%;
+  top: 105%;
+  left: 0%;
   width: 100%;
-  text-align: center;
   list-style-type: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 0 22px;
-  background-color: rgb(242, 217, 172,85%);
+  color: var(--color-on-primary);
+  background-color: var(--color-primary);
   border-radius: 35px;
 }
 
@@ -82,10 +91,14 @@ div#difficultyMenu ul.DropDwonMenu{
   z-index: 100;
 }
 div#difficultyMenu ul.DropDwonMenu li{
-  background-color:#4c656e;
-  width: 50%;
-  padding:15px;
+  display: flex;
+  justify-content: center;
   margin: 0;
-  border-radius: 25px;
   margin: 15px;
+  padding: 6px;
+}
+div#difficultyMenu ul.DropDwonMenu li:hover{
+  border-radius: 25px;
+  background-color:#4c656e;
+
 }

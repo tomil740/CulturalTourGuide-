@@ -18,7 +18,7 @@ class DrawMatchingGame{
         const theEle = document.createElement("div");
         theEle.id = 'difficultyMenu';
         theEle.innerHTML = `
-        <a id="difficultyLev">difficult level:</a>
+        <a id="difficultyLev">Difficulty level: <strong> Hard</strong></a>
             <ul class="DropDwonMenu">
                 <li href="#">Easy</li>
                 <li href="#">intermediate</li>
@@ -30,10 +30,21 @@ class DrawMatchingGame{
             //get levelNum
             const levelNum = this.toUtil(item.textContent);
             item.addEventListener("click",()=>{onDeficulatyPick(levelNum)
+                theEle.querySelector("a#difficultyLev strong").textContent = ` ${item.textContent}`;
                 theMenuEle.classList.toggle("visable");
+                const gameBoard = document.querySelector('body main section article#gameSection');
+                if(levelNum < 6){
+                    if(!gameBoard.classList.contains("lowItems")){
+                        gameBoard.classList.toggle("lowItems")
+                    }
+                }else{
+                    if(gameBoard.classList.contains("lowItems")){
+                        gameBoard.classList.toggle("lowItems")
+                    }
+                }
             })
         })
-        theEle.querySelector("a#difficultyLev").addEventListener("click",()=>{
+        theEle.querySelector("a#difficultyLev").addEventListener("mouseover",()=>{
             //show the menu
             theMenuEle.classList.toggle("visable");
         }) 

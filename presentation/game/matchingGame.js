@@ -17,8 +17,11 @@ class MatchingGame{
         this.#openPairs = 0;  
         this.#sumOfPile = this.#deck.pileA.length;
         this.#matchedCards = new Set();
-        drawMatchingGame.initalizeDefMenu(this.initalizeDeck);
-
+        drawMatchingGame.initalizeDefMenu(this.initalizeDeck);     
+        for(let index = 0; index < this.sumOfPile; index++){
+          drawMatchingGame.drawCard(this.deck.pileA[index],"typeA",this.onUserPick);
+          drawMatchingGame.drawCard(this.deck.pileB[index],"typeB",this.onUserPick);
+      }   
     }
  
     get deck(){
