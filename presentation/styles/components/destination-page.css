@@ -66,3 +66,36 @@ section.container {
   display: flex;
   flex-direction: column;
 }
+
+/*Popular places section*/
+
+#popularSites {
+  display: flex;
+  gap: 20px;
+  background-color: var(--color-error-container);
+  border-radius: 1em;
+  margin-top: 10px;
+}
+
+.popularPlaces {
+  padding: 10px;
+  position: relative;
+}
+.popularPlaces img {
+  width: 300px;
+  height: 300px;
+  border-radius: 5px;
+}
+.popularPlaces p {
+  position: absolute;
+  font-size: 1em;
+  text-align: start;
+  font-weight: 600;
+  bottom: 30px;
+  padding-left: 10px;
+  color: white;
+  background-color: var(--color-primary-container-trans);
+  z-index: 100;
+  width: 70%;
+  padding: 5px;
+}
