@@ -5,8 +5,8 @@ class Destination {
     this.image = argObj.imgUrls;
     this.population = argObj.population;
     this.description = argObj.summary;
-    this.restaurants = argObj.category[0];
-    this.attractions = argObj.category[1];
+    // this.category = argObj.category[0];
+    this.popularPlaces = argObj.popularPlaces;
   }
 }
 
