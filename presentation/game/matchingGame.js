@@ -11,6 +11,7 @@ class MatchingGame{
     #matchedCards;
 
     constructor(gameCards){
+        this.ogDeck = gameCards;
         this.#deck = gameCards;
         this.#openCardId = -1;
         this.#openPairs = 0;  
@@ -72,13 +73,10 @@ initalizeDeck(crdsLevel){
 
         const aRandomLst = matchedGameRef.getListRandomIndex(matchedGameRef.deck.pileA);
         const bRandomLst = matchedGameRef.getListRandomIndex(matchedGameRef.deck.pileA);
-
         //need to clean the UI table before start
         drawMatchingGame.cleanUiGameDeck();
 
         for(let index = 0; index < aRandomLst.length; index++){
-          console.log(matchedGameRef.deck.pileA[aRandomLst[index]]);
-
             drawMatchingGame.drawCard(matchedGameRef.deck.pileA[aRandomLst[index]],"typeA",matchedGameRef.onUserPick);
             drawMatchingGame.drawCard(matchedGameRef.deck.pileB[bRandomLst[index]],"typeB",matchedGameRef.onUserPick);
         }
@@ -90,13 +88,13 @@ initGameData:
 */
   initGameData(crdsLevel){
     const matchedGameRef = games.matchingGameRef;
-    //const resData = new MatchingCards()
+
     const pileA = [];
     const pileB = [];
 
     for(let theIndex = 0; theIndex < crdsLevel; theIndex++){
-      pileA.push(matchedGameRef.deck.pileA[theIndex]);
-      pileB.push(matchedGameRef.deck.pileB[theIndex]);
+      pileA.push(matchedGameRef.ogDeck.pileA[theIndex]);
+      pileB.push(matchedGameRef.ogDeck.pileB[theIndex]);
     }
       const a = new MatchingCards(pileA,pileB);
       matchedGameRef.deck = a;
@@ -120,7 +118,6 @@ initGameData:
       res.push(randomLst[a]);
       const r = randomLst.slice(0,a);
       randomLst = r.concat(randomLst.slice(a+1));
-      console.log(res);
     }
     return res;
 
