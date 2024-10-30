@@ -8,6 +8,8 @@ class DestinationDrawData {
     // get main element as destination container
 
     const mainContainer = document.querySelector('#destinationContent');
+    // get the popular sites (landmarks) container
+    const popSitesContainer = document.querySelector('#popularSites');
 
     // append the other data elements
     this.createDataEl(mainContainer);
@@ -18,13 +20,15 @@ class DestinationDrawData {
     this.createHeadline();
     // render images
     this.renderImages(mainContainer);
+
+    this.renderPopularSites(popSitesContainer);
   }
 
   // methods to create elements from data drawn from JSON
 
   createDataEl(mainContainer) {
     // data keys to render on destination page
-    const renderKeys = ['description', 'population', 'restaurants', 'attractions'];
+    const renderKeys = ['attractions', 'description', 'population'];
 
     const infoDescriptionSection = document.createElement('section');
     infoDescriptionSection.classList.add('infoDescriptionSection');
@@ -32,26 +36,30 @@ class DestinationDrawData {
     renderKeys.forEach((key) => {
       let val = this.destinationObj[key];
 
-      // append value only if it's not a nested value
-      if (!Array.isArray(val)) {
-        const dataElementDiv = document.createElement('div');
-        // set the div id to the corresponding key
-        dataElementDiv.setAttribute('id', key);
-
-        const hElement = document.createElement('h3');
-        const dataContent = document.createElement('div');
-
-        hElement.textContent = `${key}`;
-        hElement.style.textTransform = 'capitalize';
-        dataContent.textContent = `${val}`;
-
-        // append h3 and content to the div
-        dataElementDiv.appendChild(hElement);
-        dataElementDiv.appendChild(dataContent);
-
-        // append div to main element
-        infoDescriptionSection.appendChild(dataElementDiv);
+      if (Array.isArray(val)) {
+        val = val.join(' || ');
       }
+
+      const dataElementDiv = document.createElement('div');
+      // set the div id to the corresponding key
+      dataElementDiv.setAttribute('id', key);
+
+      const hElement = document.createElement('h3');
+      const dataContent = document.createElement('div');
+
+      hElement.textContent = `${key}`;
+      hElement.style.textTransform = 'capitalize';
+      dataContent.textContent = `${val}`;
+
+      // if (key === 'attractions') {
+      //   dataElementDiv.classList.add('attractions');
+      // }
+      // append h3 and content to the div
+      dataElementDiv.appendChild(hElement);
+      dataElementDiv.appendChild(dataContent);
+
+      // append div to main element
+      infoDescriptionSection.appendChild(dataElementDiv);
     });
     mainContainer.appendChild(infoDescriptionSection);
   }
@@ -83,6 +91,24 @@ class DestinationDrawData {
 
     // append imageDiv to mainContainer
     mainContainer.appendChild(imageDiv);
+  }
+
+  renderPopularSites(popSitesContainer) {
+    this.destinationObj['popularPlaces'].forEach((place) => {
+      const placeDiv = document.createElement('div');
+      placeDiv.classList.add('popularPlaces');
+
+      const placeImg = document.createElement('img');
+      placeImg.src = place['img'];
+
+      const placeName = document.createElement('p');
+      placeName.textContent = place['name'];
+
+      // append placeImg and placeName to placeDiv
+      placeDiv.appendChild(placeImg);
+      placeDiv.appendChild(placeName);
+      popSitesContainer.appendChild(placeDiv);
+    });
   }
 }
 

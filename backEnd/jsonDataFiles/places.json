@@ -4,26 +4,50 @@
     "city": "Jerusalem",
     "population": 8000000,
     "imgUrls": ["https://plus.unsplash.com/premium_photo-1697730130972-627b46998282?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"],
-    "summary": "test test",
+    "summary": "Jerusalem is the capital and largest city of Israel, with deep historical and religious significance for Jews, Christians, and Muslims alike. It is home to iconic landmarks such as the Western Wall, the Dome of the Rock, and the Church of the Holy Sepulchre. The city offers a blend of ancient architecture, vibrant markets, and modern neighborhoods.",
     "category": ["rests", "hotels"],
     "loc": {
       "lat": 31.7683,
       "lng": 35.2137
-    }
+    },
+    "popularPlaces": [
+      {
+        "name": "Western Wall",
+        "img": "https://images.unsplash.com/photo-1542743409-158c1d9b2c61?q=80&w=2086&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "name": "Church of the Holy Sepulchre",
+        "img": "https://images.unsplash.com/photo-1596201372755-3c8fb211dc76?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "name": "Dome of the Rock",
+        "img": "https://plus.unsplash.com/premium_photo-1694475362631-37d161f6a28a?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      }
+    ]
   },
   {
     "id": "124",
     "city": "Tel Aviv - Jaffa",
     "population": 460000,
-    "cityData": "חיבור בין תרבויות בעיר",
     "imgUrls": ["https://plus.unsplash.com/premium_photo-1697730177654-75dfc22bc231?q=80&w=2070&auto=format&fit=crop"],
-    "summary": "A vibrant modern city on Israel's Mediterranean coast.",
+    "summary": "Tel Aviv, often described as Israel's cultural and economic hub, is a lively, modern city on the Mediterranean coast. Known for its beaches, bustling nightlife, and innovation ecosystem, it seamlessly blends with the ancient port of Jaffa. Visitors can enjoy world-class restaurants, museums, and markets while experiencing the city's rich history.",
     "category": ["beaches", "nightlife"],
-    "loc": { "lat": 32.0853, "lng": 34.7818 },
+    "loc": {
+      "lat": 32.0853,
+      "lng": 34.7818
+    },
     "popularPlaces": [
       {
-        "name": "Taddi",
-        "img": "https://plus.unsplash.com/premium_photo-1697730130972-627b46998282?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        "name": "Jaffa Old City",
+        "img": "https://heremag-prod-app-deps-s3heremagassets-bfie27mzpk03.s3.amazonaws.com/wp-content/uploads/2019/11/18145849/tel-aviv-jaffa-2-1200x800.jpg"
+      },
+      {
+        "name": "Tel Aviv Port",
+        "img": "https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2024/07/11/8316c0ac07de5d097088c3ceea6cb42e_1000x1000.jpg"
+      },
+      {
+        "name": "Rothschild Boulevard",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiUoJoNZe-O-lMJWJTxW1Q9bz9YitI10wpIA&s"
       }
     ]
   },
@@ -32,81 +56,234 @@
     "city": "Haifa",
     "population": 285000,
     "imgUrls": ["https://images.unsplash.com/photo-1628405633956-385f623b767d?q=80&w=2070&auto=format&fit=crop"],
-    "summary": "A northern port city with beautiful beaches and the Bahá'í Gardens.",
+    "summary": "Haifa is a scenic coastal city and a major seaport in northern Israel. Known for its diverse communities, it offers visitors a mix of beaches, cultural attractions, and the stunning Bahá'í Gardens, a UNESCO World Heritage site. Haifa also serves as a gateway to the Galilee region, attracting tourists and pilgrims alike.",
     "category": ["port", "nature"],
-    "loc": { "lat": 32.794, "lng": 34.9896 }
+    "loc": {
+      "lat": 32.794,
+      "lng": 34.9896
+    },
+    "popularPlaces": [
+      {
+        "name": "Bahai Gardens",
+        "img": "https://images.unsplash.com/photo-1598132411739-f43bfa73717f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "name": "Stella Maris Monastery",
+        "img": "https://private-tours-in-israel.com/wp-content/uploads/2023/02/Stella-Maris-Monastery-1024x768.jpg"
+      },
+      {
+        "name": "German Colony",
+        "img": "https://www.elijahwald.com/borderblog/wp-content/uploads/2019/04/German-Colony-sign.jpg"
+      }
+    ]
   },
   {
     "id": "126",
     "city": "Nazareth",
     "population": 77000,
     "imgUrls": ["https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Nazareth_Panorama_Dafna_Tal_IMOT_%2814532097313%29.jpg/800px-Nazareth_Panorama_Dafna_Tal_IMOT_%2814532097313%29.jpg"],
-    "summary": "Known as the childhood home of Jesus, an important pilgrimage site.",
+    "summary": "Nazareth is a city of great religious significance, known as the childhood home of Jesus Christ. As a major pilgrimage destination, it features many important Christian sites, including the Basilica of the Annunciation. Nestled in the hills of the Galilee, it offers visitors a unique spiritual experience and a glimpse into local Arab culture.",
     "category": ["religion", "tourism"],
-    "loc": { "lat": 32.6996, "lng": 35.3035 }
+    "loc": {
+      "lat": 32.6996,
+      "lng": 35.3035
+    },
+    "popularPlaces": [
+      {
+        "name": "Basilica of the Annunciation",
+        "img": "https://visitnazareth.co.il/assets/uploads/property/property_1625514010_nazareth-verkundigungsbasilika1.jpg"
+      },
+      {
+        "name": "Mount Precipice",
+        "img": "https://private-tours-in-israel.com/wp-content/uploads/2020/12/Mount-Precipice-scaled.jpg"
+      },
+      {
+        "name": "Nazareth Village",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLNO0Vjd82VwpCWt4u_oXX_h4qWj7dLKSkfA&s"
+      }
+    ]
   },
   {
     "id": "127",
     "city": "Acre",
     "population": 48000,
     "imgUrls": ["https://images.unsplash.com/photo-1691071100985-72b022edee92?q=80&w=2072&auto=format&fit=crop"],
-    "summary": "A coastal city with ancient walls and a rich Crusader history.",
+    "summary": "Acre, also known as Akko, is a historic coastal city with a rich Crusader heritage. Surrounded by well-preserved city walls, Acre offers a unique blend of ancient history, bustling markets, and modern amenities. Visitors can explore underground tunnels, ancient mosques, and enjoy beautiful views of the Mediterranean Sea.",
     "category": ["history", "coast"],
-    "loc": { "lat": 32.9234, "lng": 35.0706 }
+    "loc": {
+      "lat": 32.9234,
+      "lng": 35.0706
+    },
+    "popularPlaces": [
+      {
+        "name": "Crusader Fortress",
+        "img": "https://media.istockphoto.com/id/474281918/photo/st-john-the-baptist-church.jpg?s=612x612&w=0&k=20&c=Pcvr4rOo1jASOI-ub0tBIbeyPYqt1cQ6IeNJlgOaEiU="
+      },
+      {
+        "name": "Al-Jazzar Mosque",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYs3vgs_M5tPJQ5XhRO2kf0jZoM3dZ2d_RJw&s"
+      },
+      {
+        "name": "Old Acre Market",
+        "img": "https://a.travel-assets.com/findyours-php/viewfinder/images/res40/335000/335108-Old-Acre-Market.jpg"
+      }
+    ]
   },
   {
     "id": "128",
     "city": "Ramla",
     "population": 76000,
     "imgUrls": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKU8YSR8mnDerlaidRmEafFvcqi91Fb44o39RTYLl3VO2Qr9OiCBdadkJiAp4nabUy9yI&usqp=CAU"],
-    "summary": "A city with a mixed population of Arabs and Jews, known for its market.",
+    "summary": "Ramla is a unique city known for its rich cultural diversity, with a mix of Arab and Jewish populations. It features lively markets, historical sites, and landmarks such as the White Tower and the ancient Pool of Arches. The city’s vibrant community and heritage make it a fascinating destination for cultural exploration.",
     "category": ["market", "culture"],
-    "loc": { "lat": 31.927, "lng": 34.8732 }
+    "loc": {
+      "lat": 31.927,
+      "lng": 34.8732
+    },
+    "popularPlaces": [
+      {
+        "name": "Ramla White Tower",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/White_t1.jpg/1200px-White_t1.jpg"
+      },
+      {
+        "name": "Pool of Arches",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK1130owS862U4bgOnPRMS-2L5kgfwRSoPjA&s"
+      },
+      {
+        "name": "Ramla Market",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrgq3fab3SZGGpKp8D3BwlxV9LIINRZigmlA&s"
+      }
+    ]
   },
   {
     "id": "129",
     "city": "Lod",
     "population": 77000,
     "imgUrls": ["https://www.streetsigns.co.il/Images/extra/c1749.jpg"],
-    "summary": "An ancient city with a mix of cultures and modern transportation hub.",
+    "summary": "Lod is an ancient city with a history that dates back thousands of years, now serving as an important transportation hub due to its proximity to Israel's main airport. The city boasts historical sites like St. George's Church and the Lod Mosaic, offering a unique glimpse into its layered past.",
     "category": ["history", "transport"],
-    "loc": { "lat": 31.9514, "lng": 34.8953 }
+    "loc": {
+      "lat": 31.9514,
+      "lng": 34.8953
+    },
+    "popularPlaces": [
+      {
+        "name": "St. George's Church",
+        "img": "https://i0.wp.com/www.israelandyou.com/wp-content/uploads/2014/11/IMG_20141029_155218.jpg?fit=800%2C600&ssl=1"
+      },
+      {
+        "name": "Lod Mosaic",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQONDODdIr-UG_-euQBgaKsL1hecT7Mrzd-_A&s"
+      },
+      {
+        "name": "Ben Shemen Forest",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcGdcapcu6asxsqApx8Rww_GYXr8gwZhk-TA&s"
+      }
+    ]
   },
   {
     "id": "130",
     "city": "Safed",
     "population": 35000,
     "imgUrls": ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2Gi_nwySvIdjGsCoKrsnDqeS91_1EVipq0g&s"],
-    "summary": "A hilltop city known for its Kabbalistic history and vibrant artist community.",
+    "summary": "Safed is a picturesque hilltop city known for its spiritual significance as a center of Jewish mysticism, or Kabbalah. It also has a thriving artist community, with galleries and workshops lining its narrow alleys. Safed’s Old City offers visitors a chance to explore synagogues, museums, and the city's unique artistic vibe.",
     "category": ["religion", "art"],
-    "loc": { "lat": 32.966, "lng": 35.496 }
+    "loc": {
+      "lat": 32.966,
+      "lng": 35.496
+    },
+    "popularPlaces": [
+      {
+        "name": "Safed Old City",
+        "img": "https://images.jpost.com/image/upload/q_auto/c_fill,g_faces:center,h_537,w_822/253537"
+      },
+      {
+        "name": "The Artists' Colony",
+        "img": "https://i.ytimg.com/vi/hq-aYMgLd4Q/sddefault.jpg"
+      },
+      {
+        "name": "Safed Kabbalah Center",
+        "img": "https://images.jpost.com/image/upload/q_auto/c_fill,g_faces:center,h_537,w_822/481344"
+      }
+    ]
   },
   {
     "id": "131",
     "city": "Tiberias",
     "population": 44000,
     "imgUrls": ["https://images.squarespace-cdn.com/content/v1/5a87961cbe42d637c54cab93/995a89c4-5ea8-4ccb-ba4e-98f194231cd5/tiberias-travel-guide.jpg"],
-    "summary": "A city on the Sea of Galilee, important to both Jewish and Christian traditions.",
+    "summary": "Tiberias lies along the shores of the Sea of Galilee and is one of Israel’s most historically and spiritually significant cities. It is known for its hot springs, water sports, and religious landmarks, attracting visitors seeking both relaxation and pilgrimage. Tiberias also serves as a gateway to the surrounding Galilee region.",
     "category": ["religion", "waterfront"],
-    "loc": { "lat": 32.7922, "lng": 35.528 }
+    "loc": {
+      "lat": 32.7922,
+      "lng": 35.528
+    },
+    "popularPlaces": [
+      {
+        "name": "Sea of Galilee",
+        "img": "https://israel.travel/wp-content/uploads/2020/11/%D7%AA%D7%9E%D7%95%D7%A0%D7%94-%D7%9E%D7%A7%D7%93%D7%99%D7%9E%D7%94-%D7%92%D7%9C%D7%99%D7%9C-%D7%AA%D7%97%D7%AA%D7%95%D7%9F-min-1-1024x683.jpg"
+      },
+      {
+        "name": "Tiberias Hot Springs",
+        "img": "https://static-en.parks.org.il/wp-content/uploads/2020/11/%D7%97%D7%9E%D7%AA-%D7%98%D7%91%D7%A8%D7%99%D7%94-%D7%96%D7%99%D7%95-%D7%9C%D7%95%D7%99.jpeg"
+      },
+      {
+        "name": "The Church of St. Peter",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/St_peters_tiberias_1.jpg/640px-St_peters_tiberias_1.jpg"
+      }
+    ]
   },
   {
     "id": "132",
     "city": "Hebron",
     "population": 215000,
     "imgUrls": ["https://hebronfund.org/wp-content/uploads/2019/07/tower-of-david.jpg"],
-    "summary": "An ancient city with a significant history for Jews and Muslims, home to the Tomb of the Patriarchs.",
+    "summary": "Hebron is an ancient city revered by both Jews and Muslims for its religious significance, as it is home to the Tomb of the Patriarchs. The city’s complex history is reflected in its divided neighborhoods and religious sites. Visitors can explore its vibrant markets and the old city center filled with cultural heritage.",
     "category": ["religion", "history"],
-    "loc": { "lat": 31.5326, "lng": 35.0998 }
+    "loc": {
+      "lat": 31.5326,
+      "lng": 35.0998
+    },
+    "popularPlaces": [
+      {
+        "name": "Tomb of the Patriarchs",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/3/32/Hebron_Cave_of_the_Patriarchs.jpg"
+      },
+      {
+        "name": "Hebron Museum",
+        "img": "https://www.hebronrc.ps/sites/default/files/styles/safe_original/public/2022-12/261793842_111178234733575_3467551833535361441_n.jpg?itok=yHHP7g6_"
+      },
+      {
+        "name": "Glass Factory of Hebron",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSg90ExIC-x8gQiiZtjqbRtEAH9bELZu2r6w&s"
+      }
+    ]
   },
   {
     "id": "133",
     "city": "Be'er Sheva",
     "population": 209000,
     "imgUrls": ["https://www.beer-sheva.muni.il/Visitors/OldCity/PublishingImages/DPP_0146.JPG"],
-    "summary": "A desert city with a rich biblical heritage and a modern university.",
+    "summary": "Be'er Sheva, often called the capital of the Negev desert, blends ancient history with modern development. It is home to Tel Be'er Sheva, a UNESCO World Heritage site, and the prestigious Ben-Gurion University. The city offers cultural attractions, art museums, and a dynamic student community.",
     "category": ["education", "history"],
-    "loc": { "lat": 31.252, "lng": 34.7915 }
+    "loc": {
+      "lat": 31.252,
+      "lng": 34.7915
+    },
+    "popularPlaces": [
+      {
+        "name": "Tel Be'er Sheva",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrI0-5p7Wg3gMa5G2Q5bm5jG5XqezXaQCa1A&s"
+      },
+      {
+        "name": "Negev Museum of Art",
+        "img": "https://negev-museum.org.il/wp-content/uploads/2024/03/Y5A7067-e1710941999830.jpg"
+      },
+      {
+        "name": "Ben-Gurion University",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4XRhctl4PgRCqubiusDoS_WnN4D0u_R9-Lw&s"
+      }
+    ]
   },
   {
     "id": "134",
@@ -115,7 +292,24 @@
     "imgUrls": ["https://www.shutterstock.com/image-photo/ashkelon-israel-july-19-2024-600nw-2493868663.jpg"],
     "summary": "A coastal city with ancient ruins and a modern marina.",
     "category": ["coast", "history"],
-    "loc": { "lat": 31.6693, "lng": 34.5743 }
+    "loc": {
+      "lat": 31.6693,
+      "lng": 34.5743
+    },
+    "popularPlaces": [
+      {
+        "name": "Ashkelon National Park",
+        "img": "https://static-en.parks.org.il/wp-content/uploads/2018/06/WhatsApp-Image-2018-12-25-at-08.49.44.jpeg"
+      },
+      {
+        "name": "Marina Ashkelon",
+        "img": "https://images.unsplash.com/photo-1644345029383-0fcfca0b5ded?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8TWFyaW5hJTIwQXNoa2Vsb258ZW58MHx8MHx8fDA%3D"
+      },
+      {
+        "name": "Ashkelon Archaeological Park",
+        "img": "https://private-tours-in-israel.com/wp-content/uploads/2021/11/Ashkelon-National-Park-Villa-1024x693.jpg"
+      }
+    ]
   },
   {
     "id": "137",
@@ -124,7 +318,24 @@
     "imgUrls": ["https://www.learnreligions.com/thmb/0iQQeBfUVdgWHBkjPlH--6vzUGk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Bethlehem-at-Night-533543800-58e7be623df78c51624f1172.jpg"],
     "summary": "The birthplace of Jesus, visited by both Christian and Muslim pilgrims.",
     "category": ["religion", "tourism"],
-    "loc": { "lat": 31.7054, "lng": 35.2024 }
+    "loc": {
+      "lat": 31.7054,
+      "lng": 35.2024
+    },
+    "popularPlaces": [
+      {
+        "name": "Church of the Nativity",
+        "img": "https://www.islamiclandmarks.com/wp-content/uploads/2015/12/Church-of-the-Nativity-1.jpg"
+      },
+      {
+        "name": "Manger Square",
+        "img": "https://www.beinharimtours.com/wwwroot/uploads/gallery/0/60f16abf-6b2e-47cc-a02d-fc3965f0207f.jpg"
+      },
+      {
+        "name": "Milk Grotto",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbhJf-m6rkiB6mLQJOuhhVT6GpXejpZ8U8Rg&s"
+      }
+    ]
   },
   {
     "id": "139",
@@ -133,6 +344,23 @@
     "imgUrls": ["https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/98/6b/25/caption.jpg?w=1400&h=1400&s=1"],
     "summary": "A northern city near the Lebanese border with a diverse population and natural attractions.",
     "category": ["nature", "culture"],
-    "loc": { "lat": 33.2088, "lng": 35.5705 }
+    "loc": {
+      "lat": 33.2088,
+      "lng": 35.5705
+    },
+    "popularPlaces": [
+      {
+        "name": "Tel Dan Nature Reserve",
+        "img": "https://trippinginisrael.co/wp-content/uploads/2021/06/tel-dan-5.jpg"
+      },
+      {
+        "name": "Banias Waterfall",
+        "img": "https://images.unsplash.com/photo-1723962830559-8529ce8b84af?q=80&w=1071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "name": "Manara Cliff",
+        "img": "https://www.amirim-home.co.il/Amirim/UploadFiles/pgallery/201562173519.jpg"
+      }
+    ]
   }
 ]

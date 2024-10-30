@@ -5,5 +5,8 @@
     "express": "^4.21.1",
     "fs": "^0.0.1-security",
     "lts": "^1.2.0"
+  },
+  "scripts": {
+    "start": "node backEnd/server.js"
   }
 }
