@@ -16,11 +16,11 @@ class MatchingGame{
     }
  
     get sumOfPile(){
-        this.#sumOfPile;
+        return this.#sumOfPile;
     }
 
     /*
-        - shful the pail
+        - shuffle the pile
         - draw the pile on the screen 
     */
     #initalizeDeck(){
@@ -42,8 +42,10 @@ class MatchingGame{
 
         if(matchedGameRef.#openCardId != -1){
             const prevCardId =  matchedGameRef.#openCardId.slice(0, matchedGameRef.#openCardId.length-1); 
-            if(prevCardId == argCardId){
+            if(prevCardId === argCardId){
+                console.log("Matched!");
                 matchedGameRef.#openPairs++;
+                console.log(matchedGameRef.#openPairs);
                 matchedGameRef.#openCardId = -1;
                 matchedGameRef.isCompleted();
             }else{
@@ -56,14 +58,15 @@ class MatchingGame{
         }
     }
 
-    isCompleted(){
+    isCompleted() {
         const matchedGameRef = games.matchingGameRef;
-
-        if(matchedGameRef.#openPairs == matchedGameRef.sumOfPile){
-            console.log("matched");
-            ////finesh...
+    
+        if (matchedGameRef.#openPairs === matchedGameRef.sumOfPile) {
+            console.log("Game Completed!");
+    
         }
     }
+    
 }
 
 export default MatchingGame;
