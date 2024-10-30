@@ -1,16 +1,13 @@
 class DestinationDrawData {
-
-
-  constructor(destinationObj,gameCallBackFun) {
-
+  constructor(destinationObj, gameCallBackFun) {
     this.destinationObj = destinationObj;
 
     //set the navigation to the matched game...
-    document.querySelector('main button#activateGame').addEventListener("click",gameCallBackFun);
- 
+    document.querySelector('main button#activateGame').addEventListener('click', gameCallBackFun);
+
     // get main element as destination container
 
-    const mainContainer = document.querySelector("#destinationContent");
+    const mainContainer = document.querySelector('#destinationContent');
 
     // append the other data elements
     this.createDataEl(mainContainer);
@@ -27,22 +24,25 @@ class DestinationDrawData {
 
   createDataEl(mainContainer) {
     // data keys to render on destination page
-    const renderKeys = ["description", "restaurants", "attractions"];
+    const renderKeys = ['description', 'population', 'restaurants', 'attractions'];
+
+    const infoDescriptionSection = document.createElement('section');
+    infoDescriptionSection.classList.add('infoDescriptionSection');
 
     renderKeys.forEach((key) => {
       let val = this.destinationObj[key];
 
       // append value only if it's not a nested value
       if (!Array.isArray(val)) {
-        const dataElementDiv = document.createElement("div");
+        const dataElementDiv = document.createElement('div');
         // set the div id to the corresponding key
-        dataElementDiv.setAttribute("id", key);
+        dataElementDiv.setAttribute('id', key);
 
-        const hElement = document.createElement("h3");
-        const dataContent = document.createElement("div");
+        const hElement = document.createElement('h3');
+        const dataContent = document.createElement('div');
 
         hElement.textContent = `${key}`;
-        hElement.style.textTransform = "capitalize";
+        hElement.style.textTransform = 'capitalize';
         dataContent.textContent = `${val}`;
 
         // append h3 and content to the div
@@ -50,30 +50,31 @@ class DestinationDrawData {
         dataElementDiv.appendChild(dataContent);
 
         // append div to main element
-        mainContainer.appendChild(dataElementDiv);
+        infoDescriptionSection.appendChild(dataElementDiv);
       }
     });
+    mainContainer.appendChild(infoDescriptionSection);
   }
 
   gameButtonText() {
     // get game activation button
-    const gameBtn = document.querySelector("#activateGame");
-    gameBtn.textContent = `show us what you know about ${this.destinationObj["city"]}!`;
+    const gameBtn = document.querySelector('#activateGame');
+    gameBtn.textContent = `show us what you know about ${this.destinationObj['city']}!`;
   }
 
   createHeadline() {
-    const h1 = document.querySelector("h1#cityName");
-    h1.textContent = `${this.destinationObj["city"]}`;
+    const h1 = document.querySelector('h1#cityName');
+    h1.textContent = `${this.destinationObj['city']}`;
   }
 
   renderImages(mainContainer) {
     // create div element for the JSON images
-    const imageDiv = document.createElement("div");
-    imageDiv.setAttribute("id", "cityImages");
+    const imageDiv = document.createElement('div');
+    imageDiv.setAttribute('id', 'cityImages');
 
-    this.destinationObj["image"].forEach((url) => {
+    this.destinationObj['image'].forEach((url) => {
       // create an img element for each image url
-      const imageEl = document.createElement("img");
+      const imageEl = document.createElement('img');
       imageEl.src = url;
 
       // append imageEl to the imageDiv
