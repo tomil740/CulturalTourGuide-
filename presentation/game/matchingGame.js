@@ -62,7 +62,7 @@ class MatchingGame{
 
         //need to clean the UI table before start
         drawMatchingGame.cleanUiGameDeck();
-        for(let counter = 0; counter < this.#sumOfPile; counter++){
+        for(let counter = 0; counter < this.#sumOfPile-1; counter++){
             drawMatchingGame.drawCard(this.deck.pileA[counter],"typeA",this.onUserPick);
             drawMatchingGame.drawCard(this.deck.pileB[(this.sumOfPile-1)-counter],"typeB",this.onUserPick);
 
@@ -130,6 +130,7 @@ class MatchingGame{
 
     isCompleted() {
         const matchedGameRef = games.matchingGameRef;
+        const progress = (matchedGameRef.openPairs/matchedGameRef.sumOfPile);
 
     
         if (matchedGameRef.openPairs === matchedGameRef.sumOfPile) {
@@ -150,29 +151,23 @@ class MatchingGame{
             playAgainButton.classList.add("play-again-btn");
             playAgainButton.textContent = "Play Again";
             playAgainButton.addEventListener("click", () => {
-                document.querySelector(".matching-game").removeChild(overlay);
+                document.querySelector("body main section article#gameSection").removeChild(overlay);
                 document.querySelectorAll(".confetti").forEach(confetti => confetti.remove());
                 location.reload(); 
             });
     
             messageContainer.appendChild(playAgainButton);
             overlay.appendChild(messageContainer);
-            document.querySelector(".matching-game").appendChild(overlay);
+            document.querySelector("body main section article#gameSection").appendChild(overlay);
     
             this.#showConfetti();
 
-        const progress = (matchedGameRef.openPairs/matchedGameRef.sumOfPile);
          //to precentages
-        if(matchedGameRef.openPairs == matchedGameRef.sumOfPile){
             drawMatchingGame.updateProgBar(100);
-            drawMatchingGame.onGameEndDialog();
             ////finesh...
-        }else{
-            drawMatchingGame.updateProgBar(progress*100);
-            drawMatchingGame.onGameEndDialog();
-
-        }
-        
+    }
+    else{
+        drawMatchingGame.updateProgBar(progress*100);
     }
 }
 
@@ -186,7 +181,7 @@ class MatchingGame{
         confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
         confetti.style.left = `${Math.random() * 100}vw`;
         confetti.style.animationDelay = `${Math.random() * 3}s`;
-        document.querySelector(".matching-game").appendChild(confetti);
+        document.querySelector("body main section article#gameSection").appendChild(confetti);
     }     
     }
 
