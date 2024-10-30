@@ -68,15 +68,16 @@ class Repository {
       //pull from the api the matched data according to our picked destination id;
 
       serverDao.getDestinationGameById(currentDes).then((theData) => {
-        const a = theData[0].gameData;
+        const a = theData.gameData;
         const pileA = [];
         const pileB = [];
         for (let itemIndex = 0; itemIndex < a.length; itemIndex++) {
           pileA.push(new CardItem(itemIndex, a[itemIndex].image, a[itemIndex].nameInArabic));
           pileB.push(new CardItem(itemIndex, a[itemIndex].image, a[itemIndex].nameInHebrew));
         }
+        const gameId = theData.destenationId; 
 
-        resolve(new MatchingCards(pileA, pileB));
+        resolve([new MatchingCards(pileA, pileB),gameId]);
       });
     });
   }

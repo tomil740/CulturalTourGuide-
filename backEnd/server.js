@@ -23,12 +23,17 @@ app.get('/destinationsPrev', (req, res) => {
 app.get('/places', (req, res) => {
   const destinations = fns.getLoadedData('destinations');
   res.json(destinations);
-});
+}); 
 
- app.get('/desGames/:desId', (req, res) => {
-   const desGames = fns.getLoadedData('desGames');
-   res.json(desGames);
- });
+app.get('/desGames/:desId', (req, res) => {
+   const gameDataLst = fns.getLoadedData('desGames');
+   const gameData = gameDataLst.find((gameDes) => gameDes.destenationId == req.params.desId);
+  if (gameData) {
+    res.json(gameData);
+  } else {
+    res.status(404).json({ message: 'gameData not found' });
+  }
+});
 
 app.get('/destinations/:desId', (req, res) => {
   const destinations = fns.getLoadedData('destinations');

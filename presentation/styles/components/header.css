@@ -41,6 +41,21 @@ header a {
 
 }
 
+body header div div.topicHeader{
+  margin-top: 7vh;
+  margin-right: 7vw;
+  display: flex;
+  justify-content: center;
+}
+
+body header div div.topicHeader img{
+  height: 14vh;
+  border-radius: 25px;
+}
+body header div div.topicHeader h2{
+  position: absolute;
+}
+
  div#difficultyMenu{
   padding: 12px;
   position: relative;
