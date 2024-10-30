@@ -12,18 +12,28 @@ class MatchingGame{
         this.openPairs = 0;  
         this.sumOfPile = this.deck.pileA.length;
 
-        this.#initalizeDeck();
+        this.initalizeDeck();
     }
  
     get sumOfPile(){
         this.sumOfPile;
     }
 
+    set sumOfPile(crdsLevel){
+
+    }
+
     /*
         - shful the pail
         - draw the pile on the screen 
     */
-    #initalizeDeck(){
+    initalizeDeck(crdsLevel){
+        //get game ref 
+        const matchedGameRef = games.matchingGameRef;
+
+        //need to clean the UI table before start
+        drawMatchingGame.cleanUiGameDeck();
+
         for(let counter = 0; counter < this.sumOfPile; counter++){
             drawMatchingGame.drawCard(this.deck.pileA[counter],"typeA",this.onUserPick);
             drawMatchingGame.drawCard(this.deck.pileB[(this.sumOfPile-1)-counter],"typeB",this.onUserPick);

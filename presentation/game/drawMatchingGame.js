@@ -10,6 +10,10 @@ class DrawMatchingGame{
       
     }
 
+    cleanUiGameDeck(){
+        document.querySelector('body main article#gameSection').innerHTML = '';
+    }
+
     /*
     will add a card element to our deck UI with the matched css class according to its type
     note :
