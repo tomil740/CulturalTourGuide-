@@ -38,45 +38,45 @@ header a {
   text-decoration: none;
   font-size: 18px;
   padding-right: 30px;
-
 }
 
-body header div div.topicHeader{
+body header div div.topicHeader {
   margin-top: 7vh;
   margin-right: 7vw;
   display: flex;
   justify-content: center;
 }
 
-body header div div.topicHeader img{
+body header div div.topicHeader img {
   height: 14vh;
   border-radius: 25px;
 }
-body header div div.topicHeader h2{
+body header div div.topicHeader h2 {
   position: absolute;
 }
 
- div#difficultyMenu{
+div#difficultyMenu {
+  cursor: pointer;
   padding: 12px;
   position: relative;
   font-weight: 400;
   font-size: 26px;
-  background-color:#4c626a;
+  background-color: #4c626a;
   border-radius: 15px;
   color: #ffffff;
   display: flex;
 }
 
-div#difficultyMenu a strong{
+div#difficultyMenu a strong {
   color: var(--color-primary);
   font-weight: 900;
   font-size: 30px;
-  background-color: rgb(255, 255, 255,75%);
+  background-color: rgb(255, 255, 255, 75%);
   border-radius: 15px;
   padding: 3px;
 }
 
- div#difficultyMenu a:hover{
+div#difficultyMenu a:hover {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 15px;
   background-color: var(--color-primary);
@@ -84,8 +84,8 @@ div#difficultyMenu a strong{
   font-weight: 700;
 }
 
-div#difficultyMenu ul.DropDwonMenu{
-  visibility:hidden;
+div#difficultyMenu ul.DropDwonMenu {
+  visibility: hidden;
   position: absolute;
   top: 105%;
   left: 0%;
@@ -101,19 +101,18 @@ div#difficultyMenu ul.DropDwonMenu{
   border-radius: 35px;
 }
 
- div#difficultyMenu ul.DropDwonMenu.visable{
-  visibility:visible;
+div#difficultyMenu ul.DropDwonMenu.visable {
+  visibility: visible;
   z-index: 100;
 }
-div#difficultyMenu ul.DropDwonMenu li{
+div#difficultyMenu ul.DropDwonMenu li {
   display: flex;
   justify-content: center;
   margin: 0;
   margin: 15px;
   padding: 6px;
 }
-div#difficultyMenu ul.DropDwonMenu li:hover{
+div#difficultyMenu ul.DropDwonMenu li:hover {
   border-radius: 25px;
-  background-color:#4c656e;
-
+  background-color: #4c656e;
 }
