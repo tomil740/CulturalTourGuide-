@@ -70,6 +70,12 @@ function createInfoWindowContent(destination, index) {
     <button id="viewDetails-${index}">View Details</button>
   `;
 
+    content.querySelector('button').addEventListener("click",()=>{
+    repository.saveCurrentDesId(destination.id);
+    window.location.href = `../destinationScreen/destination.html`;
+  })
+    
+
   content.querySelector(`#viewDetails-${index}`).addEventListener('click', () => {
     window.location.href = `../destinationScreen/destination.html?id=${index}`;
   });
@@ -103,7 +109,6 @@ function generateCards(destinations) {
 function handleCardClick(destination) {
   map.panTo({ lat: destination.loc.lat, lng: destination.loc.lng });
   map.setZoom(12);
-
   window.location.href = `../destinationScreen/destination.html`;
 }
 
