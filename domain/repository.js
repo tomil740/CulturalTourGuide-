@@ -6,11 +6,7 @@ import Destination from './models/Destination.js';
 import MatchingCards from './models/MatchingCards.js';
 
 class Repository {
-  constructor() {
-    //this.serverDao =
-    // const a =  serverDao.getDestinationById(123);
-    //a.then((data)=>console.log(data));
-  }
+  constructor() {}
 
   saveCurrentDesId(theId) {
     localStorage.setItem('currentDesId', theId);
@@ -24,13 +20,7 @@ class Repository {
     return res;
   }
 
-  /*
-    will get the matcehd data from our server dao through the api
-        * convert it into the matched domain objects
-        * and return it 
-    */
   getAllDestinationPrev() {
-    //demo data
     return new Promise((resolve, reject) => {
       serverDao.getAllDestinationPrev().then((theLst) => {
         const res = [];
@@ -42,11 +32,6 @@ class Repository {
     });
   }
 
-  /*
-    will get the matcehd data from our server dao through the api
-        * convert it into the matched domain objects
-        * and return it 
-    */
   getCurrentDestination() {
     return new Promise((resolve, reject) => {
       const theId = this.getCurrentDesId();
@@ -56,16 +41,10 @@ class Repository {
     });
   }
 
-  getMatchingGameData() { 
+  getMatchingGameData() {
     return new Promise((resolve, reject) => {
-      //get the current des
       const currentDes = this.getCurrentDesId();
       console.log('picked ', currentDes);
-      //pull from the api the matched data according to our picked destination id;
-      // const theData =
-      // const a = theData;
-
-      //pull from the api the matched data according to our picked destination id;
 
       serverDao.getDestinationGameById(currentDes).then((theData) => {
         const a = theData.gameData;
@@ -75,9 +54,9 @@ class Repository {
           pileA.push(new CardItem(itemIndex, a[itemIndex].image, a[itemIndex].nameInArabic));
           pileB.push(new CardItem(itemIndex, a[itemIndex].image, a[itemIndex].nameInHebrew));
         }
-        const gameId = theData.destenationId; 
+        const gameId = theData.destenationId;
 
-        resolve([new MatchingCards(pileA, pileB),gameId]);
+        resolve([new MatchingCards(pileA, pileB), gameId]);
       });
     });
   }
